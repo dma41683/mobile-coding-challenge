@@ -1,0 +1,20 @@
+# Uncomment the next line to define a global platform for your project
+# platform :ios, '9.0'
+
+target 'TradeRev Code challenge' do
+  # Comment the next line if you're not using Swift and don't want to use dynamic frameworks
+  use_frameworks!
+
+  # Pods for TradeRev Code challenge
+
+  target 'TradeRev Code challengeTests' do
+    inherit! :search_paths
+    # Pods for testing
+  end
+
+  target 'TradeRev Code challengeUITests' do
+    inherit! :search_paths
+    # Pods for testing
+  end
+
+end

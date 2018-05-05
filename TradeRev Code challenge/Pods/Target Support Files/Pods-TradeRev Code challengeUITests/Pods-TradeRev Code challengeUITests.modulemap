@@ -1,0 +1,6 @@
+framework module Pods_TradeRev_Code_challengeUITests {
+  umbrella header "Pods-TradeRev Code challengeUITests-umbrella.h"
+
+  export *
+  module * { export * }
+}

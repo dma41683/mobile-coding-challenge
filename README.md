@@ -1,3 +1,9 @@
+# Setup 
+
+This iOS app uses [CocoaPods](https://cocoapods.org/) for dependency manager.
+For convenience pods have been commited to this repo. 
+Open the project witht he `TradeRev Code challenge.xcworkspace` file.  
+
 # Mobile Developer Coding Challenge
 
 This is a coding challenge for prospective mobile developer applicants applying through http://work.traderev.com/
