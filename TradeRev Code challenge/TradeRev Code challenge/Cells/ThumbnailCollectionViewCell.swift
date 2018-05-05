@@ -7,13 +7,37 @@
 //
 
 import UIKit
+import Alamofire
+import AlamofireImage
 
 class ThumbnailCollectionViewCell: UICollectionViewCell {
     
-    @IBOutlet var imageView: UIImageView!
+    @IBOutlet weak var imageView: UIImageView!
     
     override func prepareForReuse() {
         
         imageView.image = UIImage(named: "placeholder")
+    }
+    
+    func setImage(url: String?) {
+        
+        guard  let url = url else {
+            
+            return
+        }
+        DispatchQueue.global(qos: .background).async {
+            
+            Alamofire.request(url).responseImage { (response) in
+                
+                guard let image = response.result.value else {
+                    
+                    return
+                }
+                DispatchQueue.main.async {
+                    
+                    self.imageView.image = image
+                }
+            }
+        }
     }
 }

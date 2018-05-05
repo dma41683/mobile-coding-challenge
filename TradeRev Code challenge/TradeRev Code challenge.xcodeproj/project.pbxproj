@@ -8,6 +8,11 @@
 
 /* Begin PBXBuildFile section */
 		823F5E0C209E2562003FA13F /* ThumbnailCollectionViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 823F5E0B209E2562003FA13F /* ThumbnailCollectionViewCell.swift */; };
+		823F5E0F209E3F76003FA13F /* Photo.swift in Sources */ = {isa = PBXBuildFile; fileRef = 823F5E0E209E3F76003FA13F /* Photo.swift */; };
+		823F5E11209E4156003FA13F /* Urls.swift in Sources */ = {isa = PBXBuildFile; fileRef = 823F5E10209E4156003FA13F /* Urls.swift */; };
+		823F5E13209E42E2003FA13F /* User.swift in Sources */ = {isa = PBXBuildFile; fileRef = 823F5E12209E42E2003FA13F /* User.swift */; };
+		823F5E15209E4727003FA13F /* FeedDownloader.swift in Sources */ = {isa = PBXBuildFile; fileRef = 823F5E14209E4727003FA13F /* FeedDownloader.swift */; };
+		823F5E18209E5579003FA13F /* PhotoGridViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 823F5E17209E5579003FA13F /* PhotoGridViewModel.swift */; };
 		827D957A209E1E8F00BD678D /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 827D9579209E1E8F00BD678D /* AppDelegate.swift */; };
 		827D957C209E1E8F00BD678D /* ViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 827D957B209E1E8F00BD678D /* ViewController.swift */; };
 		827D957F209E1E8F00BD678D /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 827D957D209E1E8F00BD678D /* Main.storyboard */; };
@@ -45,6 +50,11 @@
 		67D6D66DB147DB50F4A27B75 /* Pods-TradeRev Code challengeTests.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-TradeRev Code challengeTests.release.xcconfig"; path = "Pods/Target Support Files/Pods-TradeRev Code challengeTests/Pods-TradeRev Code challengeTests.release.xcconfig"; sourceTree = "<group>"; };
 		7E22F4D869782C201CFD2C31 /* Pods-TradeRev Code challenge.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-TradeRev Code challenge.debug.xcconfig"; path = "Pods/Target Support Files/Pods-TradeRev Code challenge/Pods-TradeRev Code challenge.debug.xcconfig"; sourceTree = "<group>"; };
 		823F5E0B209E2562003FA13F /* ThumbnailCollectionViewCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ThumbnailCollectionViewCell.swift; sourceTree = "<group>"; };
+		823F5E0E209E3F76003FA13F /* Photo.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Photo.swift; sourceTree = "<group>"; };
+		823F5E10209E4156003FA13F /* Urls.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Urls.swift; sourceTree = "<group>"; };
+		823F5E12209E42E2003FA13F /* User.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = User.swift; sourceTree = "<group>"; };
+		823F5E14209E4727003FA13F /* FeedDownloader.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = FeedDownloader.swift; sourceTree = "<group>"; };
+		823F5E17209E5579003FA13F /* PhotoGridViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PhotoGridViewModel.swift; sourceTree = "<group>"; };
 		827D9576209E1E8F00BD678D /* TradeRev Code challenge.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = "TradeRev Code challenge.app"; sourceTree = BUILT_PRODUCTS_DIR; };
 		827D9579209E1E8F00BD678D /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
 		827D957B209E1E8F00BD678D /* ViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ViewController.swift; sourceTree = "<group>"; };
@@ -112,6 +122,24 @@
 			path = Cells;
 			sourceTree = "<group>";
 		};
+		823F5E0D209E3F61003FA13F /* Models */ = {
+			isa = PBXGroup;
+			children = (
+				823F5E0E209E3F76003FA13F /* Photo.swift */,
+				823F5E10209E4156003FA13F /* Urls.swift */,
+				823F5E12209E42E2003FA13F /* User.swift */,
+			);
+			path = Models;
+			sourceTree = "<group>";
+		};
+		823F5E16209E5516003FA13F /* Viewmodel */ = {
+			isa = PBXGroup;
+			children = (
+				823F5E17209E5579003FA13F /* PhotoGridViewModel.swift */,
+			);
+			path = Viewmodel;
+			sourceTree = "<group>";
+		};
 		827D956D209E1E8F00BD678D = {
 			isa = PBXGroup;
 			children = (
@@ -137,6 +165,8 @@
 		827D9578209E1E8F00BD678D /* TradeRev Code challenge */ = {
 			isa = PBXGroup;
 			children = (
+				823F5E16209E5516003FA13F /* Viewmodel */,
+				823F5E0D209E3F61003FA13F /* Models */,
 				823F5E0A209E2518003FA13F /* Cells */,
 				827D9579209E1E8F00BD678D /* AppDelegate.swift */,
 				827D957B209E1E8F00BD678D /* ViewController.swift */,
@@ -144,6 +174,7 @@
 				827D9580209E1E9000BD678D /* Assets.xcassets */,
 				827D9582209E1E9000BD678D /* LaunchScreen.storyboard */,
 				827D9585209E1E9000BD678D /* Info.plist */,
+				823F5E14209E4727003FA13F /* FeedDownloader.swift */,
 			);
 			path = "TradeRev Code challenge";
 			sourceTree = "<group>";
@@ -187,6 +218,7 @@
 				827D9572209E1E8F00BD678D /* Sources */,
 				827D9573209E1E8F00BD678D /* Frameworks */,
 				827D9574209E1E8F00BD678D /* Resources */,
+				09BD0C599E9DF520F658F193 /* [CP] Embed Pods Frameworks */,
 			);
 			buildRules = (
 			);
@@ -306,6 +338,28 @@
 /* End PBXResourcesBuildPhase section */
 
 /* Begin PBXShellScriptBuildPhase section */
+		09BD0C599E9DF520F658F193 /* [CP] Embed Pods Frameworks */ = {
+			isa = PBXShellScriptBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			inputPaths = (
+				"${SRCROOT}/Pods/Target Support Files/Pods-TradeRev Code challenge/Pods-TradeRev Code challenge-frameworks.sh",
+				"${BUILT_PRODUCTS_DIR}/Alamofire/Alamofire.framework",
+				"${BUILT_PRODUCTS_DIR}/AlamofireImage/AlamofireImage.framework",
+				"${BUILT_PRODUCTS_DIR}/ObjectMapper/ObjectMapper.framework",
+			);
+			name = "[CP] Embed Pods Frameworks";
+			outputPaths = (
+				"${TARGET_BUILD_DIR}/${FRAMEWORKS_FOLDER_PATH}/Alamofire.framework",
+				"${TARGET_BUILD_DIR}/${FRAMEWORKS_FOLDER_PATH}/AlamofireImage.framework",
+				"${TARGET_BUILD_DIR}/${FRAMEWORKS_FOLDER_PATH}/ObjectMapper.framework",
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+			shellPath = /bin/sh;
+			shellScript = "\"${SRCROOT}/Pods/Target Support Files/Pods-TradeRev Code challenge/Pods-TradeRev Code challenge-frameworks.sh\"\n";
+			showEnvVarsInLog = 0;
+		};
 		611B809B6FDDB1BFCD1A3B85 /* [CP] Check Pods Manifest.lock */ = {
 			isa = PBXShellScriptBuildPhase;
 			buildActionMask = 2147483647;
@@ -367,9 +421,14 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				823F5E0F209E3F76003FA13F /* Photo.swift in Sources */,
 				827D957C209E1E8F00BD678D /* ViewController.swift in Sources */,
+				823F5E13209E42E2003FA13F /* User.swift in Sources */,
+				823F5E15209E4727003FA13F /* FeedDownloader.swift in Sources */,
 				827D957A209E1E8F00BD678D /* AppDelegate.swift in Sources */,
 				823F5E0C209E2562003FA13F /* ThumbnailCollectionViewCell.swift in Sources */,
+				823F5E11209E4156003FA13F /* Urls.swift in Sources */,
+				823F5E18209E5579003FA13F /* PhotoGridViewModel.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};

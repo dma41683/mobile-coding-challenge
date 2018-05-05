@@ -9,10 +9,23 @@
 import UIKit
 
 class ViewController: UIViewController {
+    
+    fileprivate let viewModel = PhotoGridViewModel()
+    
+    
+    @IBOutlet weak var collectionView: UICollectionView!
+    
+    required init?(coder aDecoder: NSCoder) {
+        
+        super.init(coder: aDecoder)
+        viewModel.photoGridView = self
+    }
 
     override func viewDidLoad() {
+        
         super.viewDidLoad()
-        // Do any additional setup after loading the view, typically from a nib.
+        viewModel.viewDidLoad()
+        
     }
 
     override func didReceiveMemoryWarning() {
@@ -65,15 +78,31 @@ extension ViewController: UICollectionViewDelegateFlowLayout {
 extension ViewController: UICollectionViewDataSource {
     func collectionView(_ collectionView: UICollectionView, numberOfItemsInSection section: Int) -> Int {
         
-        return 30
+        return viewModel.numberOfPhotos()
     }
     
     func collectionView(_ collectionView: UICollectionView, cellForItemAt indexPath: IndexPath) -> UICollectionViewCell {
         
         let thumbnailCell = collectionView.dequeueReusableCell(withReuseIdentifier: "imageCell", for: indexPath) as! ThumbnailCollectionViewCell
         
-        
+        thumbnailCell.setImage(url: viewModel.phtoThumbnailUrlAt(index: indexPath.row))
         return thumbnailCell
+    }
+}
+
+// MARK: PhotoGridView
+
+extension ViewController: PhotoGridView {
+    
+    func addPhotos(inPaths: [IndexPath]) {
+        
+        collectionView.performBatchUpdates({
+            
+            collectionView.insertItems(at: inPaths)
+
+        }, completion: nil)
+        
+
     }
 }
 
