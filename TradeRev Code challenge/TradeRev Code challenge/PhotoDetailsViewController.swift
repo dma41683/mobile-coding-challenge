@@ -1,5 +1,5 @@
 //
-//  ImageDetailsViewController.swift
+//  PhotoDetailsViewController.swift
 //  TradeRev Code challenge
 //
 //  Created by David Ma on 2018-05-05.
@@ -8,15 +8,23 @@
 
 import UIKit
 
-class ImageDetailsViewController: UIViewController {
+class PhotoDetailsViewController: UIViewController {
 
     @IBOutlet weak var collectionView: UICollectionView!
-    
+    var viewModel: PhotoDetailsViewModel?
     
     override func viewDidLoad() {
+        
         super.viewDidLoad()
-
-        // Do any additional setup after loading the view.
+        viewModel?.photoDetailsView = self
+        viewModel?.viewDidLoad()
+        
+    }
+    
+    override func viewDidAppear(_ animated: Bool) {
+        
+        super.viewDidAppear(animated)
+        viewModel?.viewDidAppear()
     }
 
     override func didReceiveMemoryWarning() {
@@ -27,7 +35,7 @@ class ImageDetailsViewController: UIViewController {
 
 //MARK: UICollectionViewDelegate
 
-extension ImageDetailsViewController: UICollectionViewDelegateFlowLayout {
+extension PhotoDetailsViewController: UICollectionViewDelegateFlowLayout {
     
     func collectionView(_ collectionView: UICollectionView,
                         layout collectionViewLayout: UICollectionViewLayout,
@@ -40,7 +48,7 @@ extension ImageDetailsViewController: UICollectionViewDelegateFlowLayout {
                         layout collectionViewLayout: UICollectionViewLayout,
                         insetForSectionAt section: Int) -> UIEdgeInsets {
         
-        return UIEdgeInsets(top: 1.0, left: 1.0, bottom: 1.0, right: 1.0)
+        return UIEdgeInsets(top: 0.0, left: 0.0, bottom: 0.0, right: 0.0)
     }
     
     
@@ -48,31 +56,56 @@ extension ImageDetailsViewController: UICollectionViewDelegateFlowLayout {
                         layout collectionViewLayout: UICollectionViewLayout,
                         minimumInteritemSpacingForSectionAt section: Int) -> CGFloat {
         
-        return 1.0
+        return 0.0
     }
     
     func collectionView(_ collectionView: UICollectionView,
                         layout collectionViewLayout: UICollectionViewLayout,
                         minimumLineSpacingForSectionAt section: Int) -> CGFloat {
         
-        return 1.0
+        return 0.0
     }
 }
 
 
 // MARK: UICollectionViewDataSorce
 
-extension ImageDetailsViewController: UICollectionViewDataSource {
+extension PhotoDetailsViewController: UICollectionViewDataSource {
     func collectionView(_ collectionView: UICollectionView, numberOfItemsInSection section: Int) -> Int {
         
-        return FeedDowloader.photos.count
+        
+        return  viewModel?.numberOfPhotos() ?? 0
     }
     
     func collectionView(_ collectionView: UICollectionView, cellForItemAt indexPath: IndexPath) -> UICollectionViewCell {
         
-        let cell = collectionView.dequeueReusableCell(withReuseIdentifier: "detailsCell", for: indexPath) as! ImageDetailsCollectionViewCell
+        let cell = collectionView.dequeueReusableCell(withReuseIdentifier: "detailsCell", for: indexPath) as! PhotoDetailsCollectionViewCell
         
-        cell.setImage(photo: FeedDowloader.photos[indexPath.row])
+        title = viewModel?.titleForPhtoAt(index: indexPath.row) ?? ""
+        cell.setImage(photo: viewModel?.phtoAt(index: indexPath.row))
+        viewModel?.addMorePhotos(currentCount: collectionView.numberOfItems(inSection: 0))
+        
+        
         return cell
     }
 }
+
+// MARK: PhotoDetailsView
+
+extension PhotoDetailsViewController: PhotoDetailsView {
+    
+    func addPhotos(inPaths: [IndexPath]) {
+        
+        collectionView.performBatchUpdates({
+            
+            collectionView.insertItems(at: inPaths)
+            
+        }, completion: nil)
+    }
+    
+    func setShowPhotoAt(index: Int) {
+        
+        collectionView.scrollToItem(at: IndexPath(item: index, section: 0), at: .right, animated: false)
+    }
+}
+

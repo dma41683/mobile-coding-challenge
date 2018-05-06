@@ -12,7 +12,6 @@ class ViewController: UIViewController {
     
     fileprivate let viewModel = PhotoGridViewModel()
     
-    
     @IBOutlet weak var collectionView: UICollectionView!
     
     required init?(coder aDecoder: NSCoder) {
@@ -26,10 +25,29 @@ class ViewController: UIViewController {
         super.viewDidLoad()
         viewModel.viewDidLoad()
     }
+    
+    override func viewDidAppear(_ animated: Bool) {
+        
+        super.viewDidAppear(animated)
+        viewModel.viewDidAppear()
+    }
 
     override func didReceiveMemoryWarning() {
         super.didReceiveMemoryWarning()
         // Dispose of any resources that can be recreated.
+    }
+    
+    override func prepare(for segue: UIStoryboardSegue, sender: Any?) {
+        
+        guard let detialsViewController = segue.destination as? PhotoDetailsViewController else {
+            
+            return
+        }
+        guard let cell = sender as? UICollectionViewCell, let indexPath = collectionView.indexPath(for: cell) else {
+            
+            return
+        }
+        detialsViewController.viewModel = viewModel.photoDetailsViewModel(atIndex: indexPath.row)
     }
 
 
@@ -71,10 +89,10 @@ extension ViewController: UICollectionViewDelegateFlowLayout {
     }
 }
 
-
 // MARK: UICollectionViewDataSorce
 
 extension ViewController: UICollectionViewDataSource {
+  
     func collectionView(_ collectionView: UICollectionView, numberOfItemsInSection section: Int) -> Int {
         
         return viewModel.numberOfPhotos()
@@ -86,6 +104,8 @@ extension ViewController: UICollectionViewDataSource {
         
         thumbnailCell.setImage(photo: viewModel.phtoAt(index: indexPath.row))
         
+        viewModel.addMorePhotos(currentCount: collectionView.numberOfItems(inSection: 0))
+        
         return thumbnailCell
     }
 }
@@ -93,6 +113,21 @@ extension ViewController: UICollectionViewDataSource {
 // MARK: PhotoGridView
 
 extension ViewController: PhotoGridView {
+    
+    func scrollToPhotoAt(index: Int) {
+        
+        guard index < collectionView.numberOfItems(inSection: 0) else {
+            
+            return
+        }
+        collectionView.scrollToItem(at: IndexPath(item: index, section: 0), at: .top, animated: false)
+    }
+    
+    func reloadData() {
+        
+        collectionView.reloadData()
+    }
+    
     
     func setTitle(title: String) {
         

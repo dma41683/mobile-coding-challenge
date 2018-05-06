@@ -1,5 +1,5 @@
 //
-//  ImageDetailsCollectionViewCell.swift
+//  PhotoDetailsCollectionViewCell.swift
 //  TradeRev Code challenge
 //
 //  Created by David Ma on 2018-05-05.
@@ -8,7 +8,7 @@
 
 import UIKit
 
-class ImageDetailsCollectionViewCell: UICollectionViewCell {
+class PhotoDetailsCollectionViewCell: UICollectionViewCell {
     
     @IBOutlet weak var nameLabel: UILabel!
     @IBOutlet weak var descriptionLabel: UILabel!

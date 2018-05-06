@@ -7,14 +7,15 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
+		8205BF72209F46AE00F0AF80 /* PhotoDetailsViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8205BF71209F46AE00F0AF80 /* PhotoDetailsViewModel.swift */; };
 		823F5E0C209E2562003FA13F /* ThumbnailCollectionViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 823F5E0B209E2562003FA13F /* ThumbnailCollectionViewCell.swift */; };
 		823F5E0F209E3F76003FA13F /* Photo.swift in Sources */ = {isa = PBXBuildFile; fileRef = 823F5E0E209E3F76003FA13F /* Photo.swift */; };
 		823F5E11209E4156003FA13F /* Urls.swift in Sources */ = {isa = PBXBuildFile; fileRef = 823F5E10209E4156003FA13F /* Urls.swift */; };
 		823F5E13209E42E2003FA13F /* User.swift in Sources */ = {isa = PBXBuildFile; fileRef = 823F5E12209E42E2003FA13F /* User.swift */; };
 		823F5E15209E4727003FA13F /* FeedDownloader.swift in Sources */ = {isa = PBXBuildFile; fileRef = 823F5E14209E4727003FA13F /* FeedDownloader.swift */; };
 		823F5E18209E5579003FA13F /* PhotoGridViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 823F5E17209E5579003FA13F /* PhotoGridViewModel.swift */; };
-		823F5E1A209E7A17003FA13F /* ImageDetailsCollectionViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 823F5E19209E7A17003FA13F /* ImageDetailsCollectionViewCell.swift */; };
-		823F5E1C209E7AC1003FA13F /* ImageDetailsViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 823F5E1B209E7AC1003FA13F /* ImageDetailsViewController.swift */; };
+		823F5E1A209E7A17003FA13F /* PhotoDetailsCollectionViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 823F5E19209E7A17003FA13F /* PhotoDetailsCollectionViewCell.swift */; };
+		823F5E1C209E7AC1003FA13F /* PhotoDetailsViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 823F5E1B209E7AC1003FA13F /* PhotoDetailsViewController.swift */; };
 		827D957A209E1E8F00BD678D /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 827D9579209E1E8F00BD678D /* AppDelegate.swift */; };
 		827D957C209E1E8F00BD678D /* ViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 827D957B209E1E8F00BD678D /* ViewController.swift */; };
 		827D957F209E1E8F00BD678D /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 827D957D209E1E8F00BD678D /* Main.storyboard */; };
@@ -51,14 +52,15 @@
 		5D91EBA74D9E4A090160C789 /* Pods_TradeRev_Code_challengeTests.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_TradeRev_Code_challengeTests.framework; sourceTree = BUILT_PRODUCTS_DIR; };
 		67D6D66DB147DB50F4A27B75 /* Pods-TradeRev Code challengeTests.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-TradeRev Code challengeTests.release.xcconfig"; path = "Pods/Target Support Files/Pods-TradeRev Code challengeTests/Pods-TradeRev Code challengeTests.release.xcconfig"; sourceTree = "<group>"; };
 		7E22F4D869782C201CFD2C31 /* Pods-TradeRev Code challenge.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-TradeRev Code challenge.debug.xcconfig"; path = "Pods/Target Support Files/Pods-TradeRev Code challenge/Pods-TradeRev Code challenge.debug.xcconfig"; sourceTree = "<group>"; };
+		8205BF71209F46AE00F0AF80 /* PhotoDetailsViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PhotoDetailsViewModel.swift; sourceTree = "<group>"; };
 		823F5E0B209E2562003FA13F /* ThumbnailCollectionViewCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ThumbnailCollectionViewCell.swift; sourceTree = "<group>"; };
 		823F5E0E209E3F76003FA13F /* Photo.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Photo.swift; sourceTree = "<group>"; };
 		823F5E10209E4156003FA13F /* Urls.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Urls.swift; sourceTree = "<group>"; };
 		823F5E12209E42E2003FA13F /* User.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = User.swift; sourceTree = "<group>"; };
 		823F5E14209E4727003FA13F /* FeedDownloader.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = FeedDownloader.swift; sourceTree = "<group>"; };
 		823F5E17209E5579003FA13F /* PhotoGridViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PhotoGridViewModel.swift; sourceTree = "<group>"; };
-		823F5E19209E7A17003FA13F /* ImageDetailsCollectionViewCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ImageDetailsCollectionViewCell.swift; sourceTree = "<group>"; };
-		823F5E1B209E7AC1003FA13F /* ImageDetailsViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ImageDetailsViewController.swift; sourceTree = "<group>"; };
+		823F5E19209E7A17003FA13F /* PhotoDetailsCollectionViewCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PhotoDetailsCollectionViewCell.swift; sourceTree = "<group>"; };
+		823F5E1B209E7AC1003FA13F /* PhotoDetailsViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PhotoDetailsViewController.swift; sourceTree = "<group>"; };
 		827D9576209E1E8F00BD678D /* TradeRev Code challenge.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = "TradeRev Code challenge.app"; sourceTree = BUILT_PRODUCTS_DIR; };
 		827D9579209E1E8F00BD678D /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
 		827D957B209E1E8F00BD678D /* ViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ViewController.swift; sourceTree = "<group>"; };
@@ -122,7 +124,7 @@
 			isa = PBXGroup;
 			children = (
 				823F5E0B209E2562003FA13F /* ThumbnailCollectionViewCell.swift */,
-				823F5E19209E7A17003FA13F /* ImageDetailsCollectionViewCell.swift */,
+				823F5E19209E7A17003FA13F /* PhotoDetailsCollectionViewCell.swift */,
 			);
 			path = Cells;
 			sourceTree = "<group>";
@@ -141,6 +143,7 @@
 			isa = PBXGroup;
 			children = (
 				823F5E17209E5579003FA13F /* PhotoGridViewModel.swift */,
+				8205BF71209F46AE00F0AF80 /* PhotoDetailsViewModel.swift */,
 			);
 			path = Viewmodel;
 			sourceTree = "<group>";
@@ -180,7 +183,7 @@
 				827D9582209E1E9000BD678D /* LaunchScreen.storyboard */,
 				827D9585209E1E9000BD678D /* Info.plist */,
 				823F5E14209E4727003FA13F /* FeedDownloader.swift */,
-				823F5E1B209E7AC1003FA13F /* ImageDetailsViewController.swift */,
+				823F5E1B209E7AC1003FA13F /* PhotoDetailsViewController.swift */,
 			);
 			path = "TradeRev Code challenge";
 			sourceTree = "<group>";
@@ -430,13 +433,14 @@
 				823F5E0F209E3F76003FA13F /* Photo.swift in Sources */,
 				827D957C209E1E8F00BD678D /* ViewController.swift in Sources */,
 				823F5E13209E42E2003FA13F /* User.swift in Sources */,
+				8205BF72209F46AE00F0AF80 /* PhotoDetailsViewModel.swift in Sources */,
 				823F5E15209E4727003FA13F /* FeedDownloader.swift in Sources */,
-				823F5E1C209E7AC1003FA13F /* ImageDetailsViewController.swift in Sources */,
+				823F5E1C209E7AC1003FA13F /* PhotoDetailsViewController.swift in Sources */,
 				827D957A209E1E8F00BD678D /* AppDelegate.swift in Sources */,
 				823F5E0C209E2562003FA13F /* ThumbnailCollectionViewCell.swift in Sources */,
 				823F5E11209E4156003FA13F /* Urls.swift in Sources */,
 				823F5E18209E5579003FA13F /* PhotoGridViewModel.swift in Sources */,
-				823F5E1A209E7A17003FA13F /* ImageDetailsCollectionViewCell.swift in Sources */,
+				823F5E1A209E7A17003FA13F /* PhotoDetailsCollectionViewCell.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
