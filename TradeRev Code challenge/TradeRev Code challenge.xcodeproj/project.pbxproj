@@ -8,6 +8,7 @@
 
 /* Begin PBXBuildFile section */
 		8205BF72209F46AE00F0AF80 /* PhotoDetailsViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8205BF71209F46AE00F0AF80 /* PhotoDetailsViewModel.swift */; };
+		821279D4209FC42000DB495C /* Photo+Download.swift in Sources */ = {isa = PBXBuildFile; fileRef = 821279D3209FC42000DB495C /* Photo+Download.swift */; };
 		823F5E0C209E2562003FA13F /* ThumbnailCollectionViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 823F5E0B209E2562003FA13F /* ThumbnailCollectionViewCell.swift */; };
 		823F5E0F209E3F76003FA13F /* Photo.swift in Sources */ = {isa = PBXBuildFile; fileRef = 823F5E0E209E3F76003FA13F /* Photo.swift */; };
 		823F5E11209E4156003FA13F /* Urls.swift in Sources */ = {isa = PBXBuildFile; fileRef = 823F5E10209E4156003FA13F /* Urls.swift */; };
@@ -53,6 +54,7 @@
 		67D6D66DB147DB50F4A27B75 /* Pods-TradeRev Code challengeTests.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-TradeRev Code challengeTests.release.xcconfig"; path = "Pods/Target Support Files/Pods-TradeRev Code challengeTests/Pods-TradeRev Code challengeTests.release.xcconfig"; sourceTree = "<group>"; };
 		7E22F4D869782C201CFD2C31 /* Pods-TradeRev Code challenge.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-TradeRev Code challenge.debug.xcconfig"; path = "Pods/Target Support Files/Pods-TradeRev Code challenge/Pods-TradeRev Code challenge.debug.xcconfig"; sourceTree = "<group>"; };
 		8205BF71209F46AE00F0AF80 /* PhotoDetailsViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PhotoDetailsViewModel.swift; sourceTree = "<group>"; };
+		821279D3209FC42000DB495C /* Photo+Download.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "Photo+Download.swift"; sourceTree = "<group>"; };
 		823F5E0B209E2562003FA13F /* ThumbnailCollectionViewCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ThumbnailCollectionViewCell.swift; sourceTree = "<group>"; };
 		823F5E0E209E3F76003FA13F /* Photo.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Photo.swift; sourceTree = "<group>"; };
 		823F5E10209E4156003FA13F /* Urls.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Urls.swift; sourceTree = "<group>"; };
@@ -135,6 +137,7 @@
 				823F5E0E209E3F76003FA13F /* Photo.swift */,
 				823F5E10209E4156003FA13F /* Urls.swift */,
 				823F5E12209E42E2003FA13F /* User.swift */,
+				821279D3209FC42000DB495C /* Photo+Download.swift */,
 			);
 			path = Models;
 			sourceTree = "<group>";
@@ -430,6 +433,7 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				821279D4209FC42000DB495C /* Photo+Download.swift in Sources */,
 				823F5E0F209E3F76003FA13F /* Photo.swift in Sources */,
 				827D957C209E1E8F00BD678D /* ViewController.swift in Sources */,
 				823F5E13209E42E2003FA13F /* User.swift in Sources */,

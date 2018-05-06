@@ -42,7 +42,11 @@ class PhotoDetailsCollectionViewCell: UICollectionViewCell {
         
         photo?.downloadFullSizeImage(completion: { (image) in
             
-            self.imageView.image = image
+            UIView.transition(with: self.imageView,
+                            duration:1,
+                            options: UIViewAnimationOptions.transitionCrossDissolve,
+                                      animations: { self.imageView.image = image },
+                                      completion: nil)            
         })
     }
 }

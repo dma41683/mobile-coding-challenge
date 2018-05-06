@@ -21,7 +21,7 @@ class PhotoGridViewModel {
     weak var photoGridView: PhotoGridView?
     
     //start to fetch the next page of images when we are reaching the end of the list
-    private let downloadMorelimit = 5
+    private let downloadMorelimit = 10
     private let viewTitle = "Usplash Photos"
     private var photoDetailsViewModel: PhotoDetailsViewModel?
     

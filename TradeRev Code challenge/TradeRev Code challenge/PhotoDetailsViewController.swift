@@ -18,6 +18,7 @@ class PhotoDetailsViewController: UIViewController {
         super.viewDidLoad()
         viewModel?.photoDetailsView = self
         viewModel?.viewDidLoad()
+        collectionView.isHidden = true
         
     }
     
@@ -114,6 +115,12 @@ extension PhotoDetailsViewController: PhotoDetailsView {
     func setShowPhotoAt(index: Int) {
         
         collectionView.scrollToItem(at: IndexPath(item: index, section: 0), at: .right, animated: false)
+        
+        UIView.transition(with: collectionView, duration: 0.1, options: .curveEaseIn, animations: {
+            
+            self.collectionView.isHidden = false
+            
+        }, completion: nil)
     }
 }
 

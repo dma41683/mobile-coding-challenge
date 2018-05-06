@@ -31,7 +31,6 @@ struct FeedDownloader {
                 var size = 0
                 if let results = response.result.value {
                     
-                    
                     if let  array = Mapper<Photo>().mapArray(JSONString: results) {
                         
                         size = array.count

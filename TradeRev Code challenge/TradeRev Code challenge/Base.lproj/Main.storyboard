@@ -154,7 +154,7 @@
                                 </connections>
                             </collectionView>
                         </subviews>
-                        <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                        <color key="backgroundColor" red="0.0" green="0.0" blue="0.0" alpha="0.45638912671232879" colorSpace="custom" customColorSpace="sRGB"/>
                         <constraints>
                             <constraint firstItem="XR9-X3-BZH" firstAttribute="leading" secondItem="lwq-KE-uvq" secondAttribute="leading" id="9vt-VA-bA9"/>
                             <constraint firstItem="lwq-KE-uvq" firstAttribute="trailing" secondItem="XR9-X3-BZH" secondAttribute="trailing" id="Tzf-ds-eji"/>
