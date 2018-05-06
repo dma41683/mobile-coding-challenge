@@ -26,6 +26,14 @@ class PhotoDetailsViewController: UIViewController {
         super.viewDidAppear(animated)
         viewModel?.viewDidAppear()
     }
+    
+    override func viewWillDisappear(_ animated: Bool) {
+        
+        super.viewWillDisappear(animated)
+        
+        //set the last seen photo 
+        viewModel?.photoIndex = collectionView.indexPathsForVisibleItems[0].row
+    }
 
     override func didReceiveMemoryWarning() {
         super.didReceiveMemoryWarning()
