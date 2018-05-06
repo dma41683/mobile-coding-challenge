@@ -10,6 +10,8 @@ import Foundation
 import ObjectMapper
 import Alamofire
 
+fileprivate let imageCache = NSCache<NSString, UIImage>()
+
 struct Photo: Mappable {
     
     typealias imageDownloadCompleted = (UIImage) -> Void
@@ -34,6 +36,9 @@ struct Photo: Mappable {
         urls <- map["urls"]
         user <- map["user"]
     }
+}
+
+extension Photo {
     
     func downloadFullSizeImage(completion: @escaping imageDownloadCompleted ) {
         
@@ -55,6 +60,11 @@ struct Photo: Mappable {
     
     private func downloadImage(url: String, completion: @escaping imageDownloadCompleted) {
         
+        if let cachedImage = imageCache.object(forKey: url as NSString) {
+            completion(cachedImage)
+            return
+        }
+        
         DispatchQueue.global(qos: .background).async {
             
             Alamofire.request(url).responseImage { (response) in
@@ -63,6 +73,7 @@ struct Photo: Mappable {
                     
                     return
                 }
+                imageCache.setObject(image, forKey: url as NSString)
                 DispatchQueue.main.async {
                     
                    completion(image)
