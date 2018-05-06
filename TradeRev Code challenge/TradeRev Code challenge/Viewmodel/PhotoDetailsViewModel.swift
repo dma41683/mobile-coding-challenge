@@ -31,7 +31,7 @@ class PhotoDetailsViewModel: PhotoGridViewModel {
     }
     func titleForPhtoAt(index: Int) -> String? {
         
-        return FeedDowloader.photos[index].user?.username
+        return FeedDownloader.photos[index].user?.username
     }
     
     override func update(indexPaths: [IndexPath]) {

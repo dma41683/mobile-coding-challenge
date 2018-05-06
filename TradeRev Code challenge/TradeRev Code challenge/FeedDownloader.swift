@@ -10,7 +10,7 @@ import Foundation
 import Alamofire
 import ObjectMapper
 
-struct FeedDowloader {
+struct FeedDownloader {
     
     
     static var photos: [Photo] = []

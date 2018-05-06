@@ -22,12 +22,12 @@ class PhotoGridViewModel {
     
     //start to fetch the next page of images when we are reaching the end of the list
     private let downloadMorelimit = 5
-    private let viewTitle = "Usplash Phots"
+    private let viewTitle = "Usplash Photos"
     private var photoDetailsViewModel: PhotoDetailsViewModel?
     
     private func downloadNextPage(isFirstStart: Bool = false) {
         
-        FeedDowloader.download { (size) in
+        FeedDownloader.download { (size) in
             
             if isFirstStart {
                 
@@ -50,12 +50,12 @@ class PhotoGridViewModel {
     
     func addMorePhotos(currentCount: Int) {
         
-        guard currentCount <  FeedDowloader.photos.count else {
+        guard currentCount <  FeedDownloader.photos.count else {
             
             return
         }
         var indexPaths:[IndexPath] = []
-        for index in currentCount..<FeedDowloader.photos.count {
+        for index in currentCount..<FeedDownloader.photos.count {
 
                 indexPaths.append(IndexPath(item: index, section: 0))
         }
@@ -70,17 +70,17 @@ class PhotoGridViewModel {
     
     func numberOfPhotos() -> Int {
         
-        return FeedDowloader.photos.count
+        return FeedDownloader.photos.count
     }
     
     func phtoAt(index: Int) -> Photo? {
         
-        if FeedDowloader.photos.count - index < downloadMorelimit {
+        if FeedDownloader.photos.count - index < downloadMorelimit {
             
             downloadNextPage()
         }
         
-        return FeedDowloader.photos[index]
+        return FeedDownloader.photos[index]
     }
     
     func photoIndexToScrollTo() -> Int {
