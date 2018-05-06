@@ -19,25 +19,11 @@ class ThumbnailCollectionViewCell: UICollectionViewCell {
         imageView.image = UIImage(named: "placeholder")
     }
     
-    func setImage(url: String?) {
+    func setImage(photo: Photo?) {
         
-        guard  let url = url else {
+        photo?.downloadThumbnail(completion: { (image) in
             
-            return
-        }
-        DispatchQueue.global(qos: .background).async {
-            
-            Alamofire.request(url).responseImage { (response) in
-                
-                guard let image = response.result.value else {
-                    
-                    return
-                }
-                DispatchQueue.main.async {
-                    
-                    self.imageView.image = image
-                }
-            }
-        }
+            self.imageView.image = image
+        })
     }
 }

@@ -1,5 +1,5 @@
 //
-//  ViewController.swift
+//  ImageDetailsViewController.swift
 //  TradeRev Code challenge
 //
 //  Created by David Ma on 2018-05-05.
@@ -8,51 +8,39 @@
 
 import UIKit
 
-class ViewController: UIViewController {
-    
-    fileprivate let viewModel = PhotoGridViewModel()
-    
-    
+class ImageDetailsViewController: UIViewController {
+
     @IBOutlet weak var collectionView: UICollectionView!
     
-    required init?(coder aDecoder: NSCoder) {
-        
-        super.init(coder: aDecoder)
-        viewModel.photoGridView = self
-    }
-
+    
     override func viewDidLoad() {
-        
         super.viewDidLoad()
-        viewModel.viewDidLoad()
+
+        // Do any additional setup after loading the view.
     }
 
     override func didReceiveMemoryWarning() {
         super.didReceiveMemoryWarning()
         // Dispose of any resources that can be recreated.
     }
-
-
 }
 
 //MARK: UICollectionViewDelegate
 
-extension ViewController: UICollectionViewDelegateFlowLayout {
+extension ImageDetailsViewController: UICollectionViewDelegateFlowLayout {
     
     func collectionView(_ collectionView: UICollectionView,
-                                 layout collectionViewLayout: UICollectionViewLayout,
-                                 sizeForItemAt indexPath: IndexPath) -> CGSize {
+                        layout collectionViewLayout: UICollectionViewLayout,
+                        sizeForItemAt indexPath: IndexPath) -> CGSize {
         
-            let size = collectionView.frame.size.width / 3 - 3.0
-        
-            return CGSize(width: size, height: size)
+        return CGSize(width: collectionView.frame.size.width, height: collectionView.frame.size.height)
     }
     
     func collectionView(_ collectionView: UICollectionView,
                         layout collectionViewLayout: UICollectionViewLayout,
                         insetForSectionAt section: Int) -> UIEdgeInsets {
         
-        return UIEdgeInsets(top: 2.0, left: 2.0, bottom: 2.0, right: 2.0)
+        return UIEdgeInsets(top: 1.0, left: 1.0, bottom: 1.0, right: 1.0)
     }
     
     
@@ -67,49 +55,24 @@ extension ViewController: UICollectionViewDelegateFlowLayout {
                         layout collectionViewLayout: UICollectionViewLayout,
                         minimumLineSpacingForSectionAt section: Int) -> CGFloat {
         
-        return 2.0
+        return 1.0
     }
 }
 
 
 // MARK: UICollectionViewDataSorce
 
-extension ViewController: UICollectionViewDataSource {
+extension ImageDetailsViewController: UICollectionViewDataSource {
     func collectionView(_ collectionView: UICollectionView, numberOfItemsInSection section: Int) -> Int {
         
-        return viewModel.numberOfPhotos()
+        return FeedDowloader.photos.count
     }
     
     func collectionView(_ collectionView: UICollectionView, cellForItemAt indexPath: IndexPath) -> UICollectionViewCell {
         
-        let thumbnailCell = collectionView.dequeueReusableCell(withReuseIdentifier: "imageCell", for: indexPath) as! ThumbnailCollectionViewCell
+        let cell = collectionView.dequeueReusableCell(withReuseIdentifier: "detailsCell", for: indexPath) as! ImageDetailsCollectionViewCell
         
-        thumbnailCell.setImage(photo: viewModel.phtoAt(index: indexPath.row))
-        
-        return thumbnailCell
+        cell.setImage(photo: FeedDowloader.photos[indexPath.row])
+        return cell
     }
 }
-
-// MARK: PhotoGridView
-
-extension ViewController: PhotoGridView {
-    
-    func setTitle(title: String) {
-        
-        self.title = title
-
-    }
-    
-    func addPhotos(inPaths: [IndexPath]) {
-        
-        collectionView.performBatchUpdates({
-            
-            collectionView.insertItems(at: inPaths)
-
-        }, completion: nil)
-        
-
-    }
-}
-
-
