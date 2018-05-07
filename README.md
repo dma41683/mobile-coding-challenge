@@ -1,8 +1,14 @@
-# Setup 
+# Setup
 
-This iOS app uses [CocoaPods](https://cocoapods.org/) for dependency manager.
-For convenience pods have been commited to this repo. 
-Open the project witht he `TradeRev Code challenge.xcworkspace` file.  
+This iOS app uses [CocoaPods](https://cocoapods.org/) for dependency management.
+For convenience pods have been committed to this repo.
+Open the project with the `TradeRev Code challenge.xcworkspace` file.  
+
+# Notes
+
+- This app is written using `Swift 3.3`.
+- There are [unit tests](https://github.com/dma41683/mobile-coding-challenge/blob/master/TradeRev%20Code%20challenge/TradeRev%20Code%20challengeTests/TradeRev_Code_challengeTests.swift) that you can run.
+- Unit test requires that the host application be set to `None` for the test target, else it will try to run the tests against live data (and fail!) instead of the mock data I have provided. The `Host Application` should already of been set to `None` for the `TradeRev Code challengeTests` target under `General`
 
 # Mobile Developer Coding Challenge
 
