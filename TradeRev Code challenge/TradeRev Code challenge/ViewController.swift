@@ -59,7 +59,9 @@ extension ViewController: UICollectionViewDelegateFlowLayout {
                                  layout collectionViewLayout: UICollectionViewLayout,
                                  sizeForItemAt indexPath: IndexPath) -> CGSize {
         
-            let size = collectionView.frame.size.width / 3 - 3.0
+        let numPhotosInRow = CGFloat(collectionView.frame.size.width > collectionView.frame.size.height ? 5.0 : 3.0)
+        
+            let size = collectionView.frame.size.width / numPhotosInRow - 3.0
         
             return CGSize(width: size, height: size)
     }
