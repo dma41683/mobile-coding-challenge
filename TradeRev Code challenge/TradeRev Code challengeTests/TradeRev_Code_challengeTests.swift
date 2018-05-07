@@ -7,23 +7,118 @@
 //
 
 import XCTest
-//@testable import TradeRev_Code_challenge
 
 class TradeRev_Code_challengeTests: XCTestCase {
     
+    var photoGridViewModel: PhotoGridViewModel!
+    var didAddPhotos: Bool!
+    var title: String!
+    var scrollToPhotoIndex: Int!
+    var didReloadData: Bool!
+    
+    
     override func setUp() {
+        
         super.setUp()
-        // Put setup code here. This method is called before the invocation of each test method in the class.
+        photoGridViewModel = PhotoGridViewModel(downloader: MockFeedDownloader())
+        photoGridViewModel.photoGridView = self
+        didAddPhotos       = false
+        title              = ""
+        scrollToPhotoIndex = -1
+        didReloadData      = false
     }
     
     override func tearDown() {
-        // Put teardown code here. This method is called after the invocation of each test method in the class.
+       
         super.tearDown()
     }
     
-    func testExample() {
-       
-        let vm = PhotoGridViewModel(downloader: MockFeedDownloader())
-        vm.viewDidLoad()
+    func testViewDidLoad() {
+        
+        photoGridViewModel.viewDidLoad()
+        validateInitalSetup()
+    }
+    
+    func testLoadMorePhoto() {
+        
+        photoGridViewModel.viewDidLoad()
+       validateInitalSetup()
+       _ = photoGridViewModel.phtoAt(index: 15)
+        XCTAssertEqual(photoGridViewModel.numberOfPhotos(), 40)
+    }
+    
+    func testGetPhoto() {
+        
+        photoGridViewModel.viewDidLoad()
+        validateInitalSetup()
+        let photo = photoGridViewModel.phtoAt(index: 8)
+        XCTAssertEqual(photo?.description, "Photo 0 - 8")
+    }
+    
+    func testScrollToPhotoInDetailsView() {
+        
+        photoGridViewModel.viewDidLoad()
+        validateInitalSetup()
+       _ = photoGridViewModel.photoDetailsViewModel(atIndex: 15)
+        photoGridViewModel.photoDetailsViewModel?.photoDetailsView = self
+        photoGridViewModel.photoDetailsViewModel?.viewDidAppear()
+        XCTAssertEqual(scrollToPhotoIndex, 15)
+        XCTAssertEqual(photoGridViewModel.photoDetailsViewModel?.titleForPhtoAt(index: 15), "username: 0 - 15")
+        
+    }
+    
+    func testScrollToPhotoInDetailsViewAndDismiss() {
+        
+        photoGridViewModel.viewDidLoad()
+        validateInitalSetup()
+        _ = photoGridViewModel.photoDetailsViewModel(atIndex: 15)
+        photoGridViewModel.photoDetailsViewModel?.photoDetailsView = self
+        photoGridViewModel.photoDetailsViewModel?.viewDidAppear()
+        XCTAssertEqual(scrollToPhotoIndex, 15)
+        XCTAssertEqual(photoGridViewModel.photoDetailsViewModel?.titleForPhtoAt(index: 15), "username: 0 - 15")
+        XCTAssertEqual(photoGridViewModel.photoIndexToScrollTo(), 15)
+        
+    }
+    
+    private func validateInitalSetup() {
+        
+        XCTAssertEqual(title, "Usplash Photos")
+        XCTAssertTrue(didAddPhotos)
+        XCTAssertFalse(didReloadData)
+        XCTAssertEqual(scrollToPhotoIndex, -1)
+        XCTAssertEqual(photoGridViewModel.numberOfPhotos(), 20)
     }
 }
+
+extension TradeRev_Code_challengeTests: PhotoGridView {
+    
+    
+    func addPhotos(inPaths: [IndexPath]) {
+        
+        didAddPhotos = true
+    }
+    
+    func setTitle(title: String) {
+        
+        self.title = title
+    }
+    
+    func scrollToPhotoAt(index: Int) {
+        
+        scrollToPhotoIndex = index
+    }
+    
+    func reloadData() {
+        
+        didReloadData = true
+    }
+}
+
+extension TradeRev_Code_challengeTests: PhotoDetailsView {
+    
+    func setShowPhotoAt(index: Int) {
+        
+        scrollToPhotoIndex = index
+    }
+}
+

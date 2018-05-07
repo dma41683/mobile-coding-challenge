@@ -14,8 +14,28 @@ class MockFeedDownloader: FeedDownloader {
     
     private var page = 0
     
-     override func download(completion: ((Int) -> Void)?) {}
+    
+    private func addPhotos() {
         
-       
+        for index in 0..<20 {
+            
+            let map: [String: Any] = [
+                    "likes": Int(20 * page + index),
+                    "description": "Photo \(page) - \(index)",
+                    "user": [
+                            "username": "username: \(page) - \(index)",
+                            "name"     : "name: \(page) - \(index)"
+                        ]
+                ]
+            photos.append(Photo(JSON: map)!)
+        }
+    }
+    
+     override func download(completion: ((Int) -> Void)?) {
+        
+        addPhotos()
+        completion?(20)
+        page = page + 1
+    }
 }
 
