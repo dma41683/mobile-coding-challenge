@@ -86,6 +86,9 @@
                         <rect key="frame" x="0.0" y="0.0" width="375" height="667"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <subviews>
+                            <imageView userInteractionEnabled="NO" contentMode="scaleAspectFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" translatesAutoresizingMaskIntoConstraints="NO" id="A3z-3R-Aaf">
+                                <rect key="frame" x="0.0" y="64" width="375" height="603"/>
+                            </imageView>
                             <collectionView clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="scaleToFill" pagingEnabled="YES" dataMode="prototypes" translatesAutoresizingMaskIntoConstraints="NO" id="XR9-X3-BZH">
                                 <rect key="frame" x="0.0" y="64" width="375" height="603"/>
                                 <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
@@ -154,16 +157,21 @@
                                 </connections>
                             </collectionView>
                         </subviews>
-                        <color key="backgroundColor" red="0.0" green="0.0" blue="0.0" alpha="0.45638912671232879" colorSpace="custom" customColorSpace="sRGB"/>
+                        <color key="backgroundColor" red="0.0" green="0.0" blue="0.0" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
                         <constraints>
+                            <constraint firstItem="A3z-3R-Aaf" firstAttribute="leading" secondItem="lwq-KE-uvq" secondAttribute="leading" id="43A-hp-N2K"/>
                             <constraint firstItem="XR9-X3-BZH" firstAttribute="leading" secondItem="lwq-KE-uvq" secondAttribute="leading" id="9vt-VA-bA9"/>
+                            <constraint firstItem="A3z-3R-Aaf" firstAttribute="top" secondItem="lwq-KE-uvq" secondAttribute="top" id="CPN-of-hgO"/>
+                            <constraint firstItem="lwq-KE-uvq" firstAttribute="bottom" secondItem="A3z-3R-Aaf" secondAttribute="bottom" id="TND-fc-Gm9"/>
                             <constraint firstItem="lwq-KE-uvq" firstAttribute="trailing" secondItem="XR9-X3-BZH" secondAttribute="trailing" id="Tzf-ds-eji"/>
                             <constraint firstItem="XR9-X3-BZH" firstAttribute="top" secondItem="lwq-KE-uvq" secondAttribute="top" id="Vy8-i1-o9W"/>
+                            <constraint firstItem="lwq-KE-uvq" firstAttribute="trailing" secondItem="A3z-3R-Aaf" secondAttribute="trailing" id="n8C-H3-q16"/>
                             <constraint firstItem="lwq-KE-uvq" firstAttribute="bottom" secondItem="XR9-X3-BZH" secondAttribute="bottom" id="qIg-GN-57P"/>
                         </constraints>
                         <viewLayoutGuide key="safeArea" id="lwq-KE-uvq"/>
                     </view>
                     <connections>
+                        <outlet property="backgroundImageView" destination="A3z-3R-Aaf" id="psy-Be-3Ge"/>
                         <outlet property="collectionView" destination="XR9-X3-BZH" id="6hr-Rw-k8S"/>
                     </connections>
                 </viewController>

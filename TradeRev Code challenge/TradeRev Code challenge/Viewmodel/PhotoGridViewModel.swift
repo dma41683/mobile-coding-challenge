@@ -81,7 +81,7 @@ class PhotoGridViewModel {
         return feedDownloader.photos.count
     }
     
-    func phtoAt(index: Int) -> Photo? {
+    func photoAt(index: Int) -> Photo? {
         
         if feedDownloader.photos.count - index < downloadMorelimit {
             

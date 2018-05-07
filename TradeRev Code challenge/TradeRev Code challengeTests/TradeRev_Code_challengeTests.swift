@@ -43,7 +43,7 @@ class TradeRev_Code_challengeTests: XCTestCase {
         
         photoGridViewModel.viewDidLoad()
        validateInitalSetup()
-       _ = photoGridViewModel.phtoAt(index: 15)
+       _ = photoGridViewModel.photoAt(index: 15)
         XCTAssertEqual(photoGridViewModel.numberOfPhotos(), 40)
     }
     
@@ -51,7 +51,7 @@ class TradeRev_Code_challengeTests: XCTestCase {
         
         photoGridViewModel.viewDidLoad()
         validateInitalSetup()
-        let photo = photoGridViewModel.phtoAt(index: 8)
+        let photo = photoGridViewModel.photoAt(index: 8)
         XCTAssertEqual(photo?.description, "Photo 0 - 8")
     }
     

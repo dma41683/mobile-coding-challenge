@@ -49,8 +49,6 @@ class ViewController: UIViewController {
         }
         detialsViewController.viewModel = viewModel.photoDetailsViewModel(atIndex: indexPath.row)
     }
-
-
 }
 
 //MARK: UICollectionViewDelegate
@@ -102,7 +100,7 @@ extension ViewController: UICollectionViewDataSource {
         
         let thumbnailCell = collectionView.dequeueReusableCell(withReuseIdentifier: "imageCell", for: indexPath) as! ThumbnailCollectionViewCell
         
-        thumbnailCell.setImage(photo: viewModel.phtoAt(index: indexPath.row))
+        thumbnailCell.setImage(photo: viewModel.photoAt(index: indexPath.row))
         
         viewModel.addMorePhotos(currentCount: collectionView.numberOfItems(inSection: 0))
         
@@ -120,7 +118,7 @@ extension ViewController: PhotoGridView {
             
             return
         }
-        collectionView.scrollToItem(at: IndexPath(item: index, section: 0), at: .top, animated: false)
+        collectionView.scrollToItem(at: IndexPath(item: index, section: 0), at: .top, animated: true)
     }
     
     func reloadData() {

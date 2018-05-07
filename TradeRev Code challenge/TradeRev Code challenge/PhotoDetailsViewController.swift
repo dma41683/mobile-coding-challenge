@@ -11,11 +11,22 @@ import UIKit
 class PhotoDetailsViewController: UIViewController {
 
     @IBOutlet weak var collectionView: UICollectionView!
+    @IBOutlet weak var backgroundImageView: UIImageView!
+    
     var viewModel: PhotoDetailsViewModel?
     
     override func viewDidLoad() {
         
         super.viewDidLoad()
+        
+        if let  photo = viewModel?.photoAt(index: viewModel?.photoIndex ?? 0) {
+            
+            photo.downloadThumbnail(completion: { (image) in
+            
+                self.backgroundImageView.image = image
+            })
+        }
+        
         viewModel?.photoDetailsView = self
         viewModel?.viewDidLoad()
         collectionView.isHidden = true
@@ -32,8 +43,9 @@ class PhotoDetailsViewController: UIViewController {
         
         super.viewWillDisappear(animated)
         
-        //set the last seen photo 
-        viewModel?.photoIndex = collectionView.indexPathsForVisibleItems[0].row
+        //set the last seen photo
+        backgroundImageView.image = nil
+        viewModel?.photoIndex     = collectionView.indexPathsForVisibleItems[0].row
     }
 
     override func didReceiveMemoryWarning() {
@@ -91,7 +103,7 @@ extension PhotoDetailsViewController: UICollectionViewDataSource {
         let cell = collectionView.dequeueReusableCell(withReuseIdentifier: "detailsCell", for: indexPath) as! PhotoDetailsCollectionViewCell
         
         title = viewModel?.titleForPhtoAt(index: indexPath.row) ?? ""
-        cell.setImage(photo: viewModel?.phtoAt(index: indexPath.row))
+        cell.setImage(photo: viewModel?.photoAt(index: indexPath.row))
         viewModel?.addMorePhotos(currentCount: collectionView.numberOfItems(inSection: 0))
         
         
