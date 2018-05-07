@@ -7,8 +7,17 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
+		426AFB947A5520AF407F7770 /* Pods_TradeRev_Code_challengeTests.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 821279DE209FDBDF00DB495C /* Pods_TradeRev_Code_challengeTests.framework */; };
 		8205BF72209F46AE00F0AF80 /* PhotoDetailsViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8205BF71209F46AE00F0AF80 /* PhotoDetailsViewModel.swift */; };
 		821279D4209FC42000DB495C /* Photo+Download.swift in Sources */ = {isa = PBXBuildFile; fileRef = 821279D3209FC42000DB495C /* Photo+Download.swift */; };
+		821279D5209FD42200DB495C /* Photo.swift in Sources */ = {isa = PBXBuildFile; fileRef = 823F5E0E209E3F76003FA13F /* Photo.swift */; };
+		821279D6209FD42700DB495C /* Urls.swift in Sources */ = {isa = PBXBuildFile; fileRef = 823F5E10209E4156003FA13F /* Urls.swift */; };
+		821279D7209FD42C00DB495C /* User.swift in Sources */ = {isa = PBXBuildFile; fileRef = 823F5E12209E42E2003FA13F /* User.swift */; };
+		821279D8209FD43600DB495C /* PhotoGridViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 823F5E17209E5579003FA13F /* PhotoGridViewModel.swift */; };
+		821279D9209FD43A00DB495C /* PhotoDetailsViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8205BF71209F46AE00F0AF80 /* PhotoDetailsViewModel.swift */; };
+		821279DB209FD45300DB495C /* MockFeedDownloader.swift in Sources */ = {isa = PBXBuildFile; fileRef = 821279DA209FD45300DB495C /* MockFeedDownloader.swift */; };
+		821279DD209FDB4000DB495C /* ObjectMapper.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 821279DC209FDB4000DB495C /* ObjectMapper.framework */; };
+		821279E4209FE2AA00DB495C /* FeedDownloader.swift in Sources */ = {isa = PBXBuildFile; fileRef = 823F5E14209E4727003FA13F /* FeedDownloader.swift */; };
 		823F5E0C209E2562003FA13F /* ThumbnailCollectionViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 823F5E0B209E2562003FA13F /* ThumbnailCollectionViewCell.swift */; };
 		823F5E0F209E3F76003FA13F /* Photo.swift in Sources */ = {isa = PBXBuildFile; fileRef = 823F5E0E209E3F76003FA13F /* Photo.swift */; };
 		823F5E11209E4156003FA13F /* Urls.swift in Sources */ = {isa = PBXBuildFile; fileRef = 823F5E10209E4156003FA13F /* Urls.swift */; };
@@ -25,12 +34,12 @@
 		827D958F209E1E9000BD678D /* TradeRev_Code_challengeTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 827D958E209E1E9000BD678D /* TradeRev_Code_challengeTests.swift */; };
 		827D959A209E1E9100BD678D /* TradeRev_Code_challengeUITests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 827D9599209E1E9100BD678D /* TradeRev_Code_challengeUITests.swift */; };
 		938E9CEC004AE62033C8CA76 /* Pods_TradeRev_Code_challengeUITests.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 0BACECB00C7FA8F0946C7DD8 /* Pods_TradeRev_Code_challengeUITests.framework */; };
+		A6F698C74092EFC92ADB29CE /* Pods_TradeRev_Code_challenge.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 821279E0209FDC2300DB495C /* Pods_TradeRev_Code_challenge.framework */; };
 		AC0881B931F35B99131B71CC /* Pods_TradeRev_Code_challenge.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = E1745A26C965E415602EE38A /* Pods_TradeRev_Code_challenge.framework */; };
-		B5AC0D04B0F1197253EAA44D /* Pods_TradeRev_Code_challengeTests.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 5D91EBA74D9E4A090160C789 /* Pods_TradeRev_Code_challengeTests.framework */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
-		827D958B209E1E9000BD678D /* PBXContainerItemProxy */ = {
+		821279E2209FDC6C00DB495C /* PBXContainerItemProxy */ = {
 			isa = PBXContainerItemProxy;
 			containerPortal = 827D956E209E1E8F00BD678D /* Project object */;
 			proxyType = 1;
@@ -55,6 +64,10 @@
 		7E22F4D869782C201CFD2C31 /* Pods-TradeRev Code challenge.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-TradeRev Code challenge.debug.xcconfig"; path = "Pods/Target Support Files/Pods-TradeRev Code challenge/Pods-TradeRev Code challenge.debug.xcconfig"; sourceTree = "<group>"; };
 		8205BF71209F46AE00F0AF80 /* PhotoDetailsViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PhotoDetailsViewModel.swift; sourceTree = "<group>"; };
 		821279D3209FC42000DB495C /* Photo+Download.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "Photo+Download.swift"; sourceTree = "<group>"; };
+		821279DA209FD45300DB495C /* MockFeedDownloader.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MockFeedDownloader.swift; sourceTree = "<group>"; };
+		821279DC209FDB4000DB495C /* ObjectMapper.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; path = ObjectMapper.framework; sourceTree = BUILT_PRODUCTS_DIR; };
+		821279DE209FDBDF00DB495C /* Pods_TradeRev_Code_challengeTests.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; path = Pods_TradeRev_Code_challengeTests.framework; sourceTree = BUILT_PRODUCTS_DIR; };
+		821279E0209FDC2300DB495C /* Pods_TradeRev_Code_challenge.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; path = Pods_TradeRev_Code_challenge.framework; sourceTree = BUILT_PRODUCTS_DIR; };
 		823F5E0B209E2562003FA13F /* ThumbnailCollectionViewCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ThumbnailCollectionViewCell.swift; sourceTree = "<group>"; };
 		823F5E0E209E3F76003FA13F /* Photo.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Photo.swift; sourceTree = "<group>"; };
 		823F5E10209E4156003FA13F /* Urls.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Urls.swift; sourceTree = "<group>"; };
@@ -87,6 +100,7 @@
 			buildActionMask = 2147483647;
 			files = (
 				AC0881B931F35B99131B71CC /* Pods_TradeRev_Code_challenge.framework in Frameworks */,
+				A6F698C74092EFC92ADB29CE /* Pods_TradeRev_Code_challenge.framework in Frameworks */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -94,7 +108,8 @@
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				B5AC0D04B0F1197253EAA44D /* Pods_TradeRev_Code_challengeTests.framework in Frameworks */,
+				821279DD209FDB4000DB495C /* ObjectMapper.framework in Frameworks */,
+				426AFB947A5520AF407F7770 /* Pods_TradeRev_Code_challengeTests.framework in Frameworks */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -196,6 +211,7 @@
 			children = (
 				827D958E209E1E9000BD678D /* TradeRev_Code_challengeTests.swift */,
 				827D9590209E1E9000BD678D /* Info.plist */,
+				821279DA209FD45300DB495C /* MockFeedDownloader.swift */,
 			);
 			path = "TradeRev Code challengeTests";
 			sourceTree = "<group>";
@@ -212,6 +228,9 @@
 		EADF122BFCFF0403CFFB0A9D /* Frameworks */ = {
 			isa = PBXGroup;
 			children = (
+				821279E0209FDC2300DB495C /* Pods_TradeRev_Code_challenge.framework */,
+				821279DE209FDBDF00DB495C /* Pods_TradeRev_Code_challengeTests.framework */,
+				821279DC209FDB4000DB495C /* ObjectMapper.framework */,
 				E1745A26C965E415602EE38A /* Pods_TradeRev_Code_challenge.framework */,
 				5D91EBA74D9E4A090160C789 /* Pods_TradeRev_Code_challengeTests.framework */,
 				0BACECB00C7FA8F0946C7DD8 /* Pods_TradeRev_Code_challengeUITests.framework */,
@@ -249,11 +268,12 @@
 				827D9586209E1E9000BD678D /* Sources */,
 				827D9587209E1E9000BD678D /* Frameworks */,
 				827D9588209E1E9000BD678D /* Resources */,
+				8FC519CFDA4188783A82376E /* [CP] Embed Pods Frameworks */,
 			);
 			buildRules = (
 			);
 			dependencies = (
-				827D958C209E1E9000BD678D /* PBXTargetDependency */,
+				821279E3209FDC6C00DB495C /* PBXTargetDependency */,
 			);
 			name = "TradeRev Code challengeTests";
 			productName = "TradeRev Code challengeTests";
@@ -294,7 +314,6 @@
 					};
 					827D9589209E1E9000BD678D = {
 						CreatedOnToolsVersion = 9.3;
-						TestTargetID = 827D9575209E1E8F00BD678D;
 					};
 					827D9594209E1E9000BD678D = {
 						CreatedOnToolsVersion = 9.3;
@@ -408,6 +427,28 @@
 			shellScript = "diff \"${PODS_PODFILE_DIR_PATH}/Podfile.lock\" \"${PODS_ROOT}/Manifest.lock\" > /dev/null\nif [ $? != 0 ] ; then\n    # print error to STDERR\n    echo \"error: The sandbox is not in sync with the Podfile.lock. Run 'pod install' or update your CocoaPods installation.\" >&2\n    exit 1\nfi\n# This output is used by Xcode 'outputs' to avoid re-running this script phase.\necho \"SUCCESS\" > \"${SCRIPT_OUTPUT_FILE_0}\"\n";
 			showEnvVarsInLog = 0;
 		};
+		8FC519CFDA4188783A82376E /* [CP] Embed Pods Frameworks */ = {
+			isa = PBXShellScriptBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			inputPaths = (
+				"${SRCROOT}/Pods/Target Support Files/Pods-TradeRev Code challengeTests/Pods-TradeRev Code challengeTests-frameworks.sh",
+				"${BUILT_PRODUCTS_DIR}/Alamofire/Alamofire.framework",
+				"${BUILT_PRODUCTS_DIR}/AlamofireImage/AlamofireImage.framework",
+				"${BUILT_PRODUCTS_DIR}/ObjectMapper/ObjectMapper.framework",
+			);
+			name = "[CP] Embed Pods Frameworks";
+			outputPaths = (
+				"${TARGET_BUILD_DIR}/${FRAMEWORKS_FOLDER_PATH}/Alamofire.framework",
+				"${TARGET_BUILD_DIR}/${FRAMEWORKS_FOLDER_PATH}/AlamofireImage.framework",
+				"${TARGET_BUILD_DIR}/${FRAMEWORKS_FOLDER_PATH}/ObjectMapper.framework",
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+			shellPath = /bin/sh;
+			shellScript = "\"${SRCROOT}/Pods/Target Support Files/Pods-TradeRev Code challengeTests/Pods-TradeRev Code challengeTests-frameworks.sh\"\n";
+			showEnvVarsInLog = 0;
+		};
 		AE4BC3448CC8BD916D043AC3 /* [CP] Check Pods Manifest.lock */ = {
 			isa = PBXShellScriptBuildPhase;
 			buildActionMask = 2147483647;
@@ -452,6 +493,13 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				821279D9209FD43A00DB495C /* PhotoDetailsViewModel.swift in Sources */,
+				821279D7209FD42C00DB495C /* User.swift in Sources */,
+				821279E4209FE2AA00DB495C /* FeedDownloader.swift in Sources */,
+				821279D8209FD43600DB495C /* PhotoGridViewModel.swift in Sources */,
+				821279DB209FD45300DB495C /* MockFeedDownloader.swift in Sources */,
+				821279D6209FD42700DB495C /* Urls.swift in Sources */,
+				821279D5209FD42200DB495C /* Photo.swift in Sources */,
 				827D958F209E1E9000BD678D /* TradeRev_Code_challengeTests.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
@@ -467,10 +515,10 @@
 /* End PBXSourcesBuildPhase section */
 
 /* Begin PBXTargetDependency section */
-		827D958C209E1E9000BD678D /* PBXTargetDependency */ = {
+		821279E3209FDC6C00DB495C /* PBXTargetDependency */ = {
 			isa = PBXTargetDependency;
 			target = 827D9575209E1E8F00BD678D /* TradeRev Code challenge */;
-			targetProxy = 827D958B209E1E9000BD678D /* PBXContainerItemProxy */;
+			targetProxy = 821279E2209FDC6C00DB495C /* PBXContainerItemProxy */;
 		};
 		827D9597209E1E9000BD678D /* PBXTargetDependency */ = {
 			isa = PBXTargetDependency;
@@ -622,10 +670,7 @@
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				CODE_SIGN_STYLE = Automatic;
 				INFOPLIST_FILE = "TradeRev Code challenge/Info.plist";
-				LD_RUNPATH_SEARCH_PATHS = (
-					"$(inherited)",
-					"@executable_path/Frameworks",
-				);
+				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks";
 				PRODUCT_BUNDLE_IDENTIFIER = "com.dma.tradrev.TradeRev-Code-challenge";
 				PRODUCT_NAME = "$(TARGET_NAME)";
 				SWIFT_VERSION = 3.0;
@@ -640,10 +685,7 @@
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				CODE_SIGN_STYLE = Automatic;
 				INFOPLIST_FILE = "TradeRev Code challenge/Info.plist";
-				LD_RUNPATH_SEARCH_PATHS = (
-					"$(inherited)",
-					"@executable_path/Frameworks",
-				);
+				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks";
 				PRODUCT_BUNDLE_IDENTIFIER = "com.dma.tradrev.TradeRev-Code-challenge";
 				PRODUCT_NAME = "$(TARGET_NAME)";
 				SWIFT_VERSION = 3.0;
@@ -656,19 +698,13 @@
 			baseConfigurationReference = F3C20579EB44207D628A2834 /* Pods-TradeRev Code challengeTests.debug.xcconfig */;
 			buildSettings = {
 				ALWAYS_EMBED_SWIFT_STANDARD_LIBRARIES = YES;
-				BUNDLE_LOADER = "$(TEST_HOST)";
 				CODE_SIGN_STYLE = Automatic;
 				INFOPLIST_FILE = "TradeRev Code challengeTests/Info.plist";
-				LD_RUNPATH_SEARCH_PATHS = (
-					"$(inherited)",
-					"@executable_path/Frameworks",
-					"@loader_path/Frameworks",
-				);
+				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks @loader_path/Frameworks";
 				PRODUCT_BUNDLE_IDENTIFIER = "com.dma.tradrev.TradeRev-Code-challengeTests";
 				PRODUCT_NAME = "$(TARGET_NAME)";
-				SWIFT_VERSION = 4.0;
+				SWIFT_VERSION = 3.0;
 				TARGETED_DEVICE_FAMILY = "1,2";
-				TEST_HOST = "$(BUILT_PRODUCTS_DIR)/TradeRev Code challenge.app/TradeRev Code challenge";
 			};
 			name = Debug;
 		};
@@ -677,19 +713,13 @@
 			baseConfigurationReference = 67D6D66DB147DB50F4A27B75 /* Pods-TradeRev Code challengeTests.release.xcconfig */;
 			buildSettings = {
 				ALWAYS_EMBED_SWIFT_STANDARD_LIBRARIES = YES;
-				BUNDLE_LOADER = "$(TEST_HOST)";
 				CODE_SIGN_STYLE = Automatic;
 				INFOPLIST_FILE = "TradeRev Code challengeTests/Info.plist";
-				LD_RUNPATH_SEARCH_PATHS = (
-					"$(inherited)",
-					"@executable_path/Frameworks",
-					"@loader_path/Frameworks",
-				);
+				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks @loader_path/Frameworks";
 				PRODUCT_BUNDLE_IDENTIFIER = "com.dma.tradrev.TradeRev-Code-challengeTests";
 				PRODUCT_NAME = "$(TARGET_NAME)";
-				SWIFT_VERSION = 4.0;
+				SWIFT_VERSION = 3.0;
 				TARGETED_DEVICE_FAMILY = "1,2";
-				TEST_HOST = "$(BUILT_PRODUCTS_DIR)/TradeRev Code challenge.app/TradeRev Code challenge";
 			};
 			name = Release;
 		};
@@ -700,11 +730,7 @@
 				ALWAYS_EMBED_SWIFT_STANDARD_LIBRARIES = YES;
 				CODE_SIGN_STYLE = Automatic;
 				INFOPLIST_FILE = "TradeRev Code challengeUITests/Info.plist";
-				LD_RUNPATH_SEARCH_PATHS = (
-					"$(inherited)",
-					"@executable_path/Frameworks",
-					"@loader_path/Frameworks",
-				);
+				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks @loader_path/Frameworks";
 				PRODUCT_BUNDLE_IDENTIFIER = "com.dma.tradrev.TradeRev-Code-challengeUITests";
 				PRODUCT_NAME = "$(TARGET_NAME)";
 				SWIFT_VERSION = 4.0;
@@ -720,11 +746,7 @@
 				ALWAYS_EMBED_SWIFT_STANDARD_LIBRARIES = YES;
 				CODE_SIGN_STYLE = Automatic;
 				INFOPLIST_FILE = "TradeRev Code challengeUITests/Info.plist";
-				LD_RUNPATH_SEARCH_PATHS = (
-					"$(inherited)",
-					"@executable_path/Frameworks",
-					"@loader_path/Frameworks",
-				);
+				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks @loader_path/Frameworks";
 				PRODUCT_BUNDLE_IDENTIFIER = "com.dma.tradrev.TradeRev-Code-challengeUITests";
 				PRODUCT_NAME = "$(TARGET_NAME)";
 				SWIFT_VERSION = 4.0;

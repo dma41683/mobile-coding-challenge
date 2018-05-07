@@ -10,23 +10,22 @@ import Foundation
 import Alamofire
 import ObjectMapper
 
-struct FeedDownloader {
+class FeedDownloader {
     
+    var photos: [Photo] = []
+    private var page    = 0
     
-    static var photos: [Photo] = []
-    private static var page = 0
-    
-    static func url(for page: Int) -> String {
+    func url(for page: Int) -> String {
         
         return "https://api.unsplash.com/photos/?client_id=08eb03db3b277c9ba6273dd6e0b844f9f17328b6bb5dc5e5bff0939bd233deb3&per_page=20&page=\(page)"
     }
     
-    static func download(completion: ((Int) -> Void)?) {
+    func download(completion: ((Int) -> Void)?) {
         
         page = page + 1
         DispatchQueue.global(qos: .background).async {
          
-            Alamofire.request(url(for: page)).responseString { (response) in
+            Alamofire.request(self.url(for: self.page)).responseString { (response) in
                 
                 var size = 0
                 if let results = response.result.value {
@@ -34,7 +33,7 @@ struct FeedDownloader {
                     if let  array = Mapper<Photo>().mapArray(JSONString: results) {
                         
                         size = array.count
-                        photos.append(contentsOf: array)
+                        self.photos.append(contentsOf: array)
                     }
                 }
                 DispatchQueue.main.async {

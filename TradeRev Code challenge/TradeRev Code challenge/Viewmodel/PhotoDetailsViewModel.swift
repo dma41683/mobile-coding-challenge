@@ -18,20 +18,17 @@ class PhotoDetailsViewModel: PhotoGridViewModel {
 
     weak var  photoDetailsView: PhotoDetailsView?
     var photoIndex = 0
-        
-   override func viewDidLoad() {
-        
-    }
+    
+   override func viewDidLoad() {}
     
     override func viewDidAppear() {
         
         photoDetailsView?.setShowPhotoAt(index: photoIndex)
-
-        
     }
+    
     func titleForPhtoAt(index: Int) -> String? {
         
-        return FeedDownloader.photos[index].user?.username
+        return feedDownloader.photos[index].user?.username
     }
     
     override func update(indexPaths: [IndexPath]) {

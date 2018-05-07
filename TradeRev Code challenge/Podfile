@@ -13,6 +13,10 @@ target 'TradeRev Code challenge' do
 
   target 'TradeRev Code challengeTests' do
     inherit! :search_paths
+    
+    pod 'AlamofireImage'
+    pod 'ObjectMapper'
+
     # Pods for testing
   end
 

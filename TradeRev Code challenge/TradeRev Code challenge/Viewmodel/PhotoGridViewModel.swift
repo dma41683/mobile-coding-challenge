@@ -23,11 +23,19 @@ class PhotoGridViewModel {
     //start to fetch the next page of images when we are reaching the end of the list
     private let downloadMorelimit = 10
     private let viewTitle = "Usplash Photos"
-    private var photoDetailsViewModel: PhotoDetailsViewModel?
+    
+    var photoDetailsViewModel: PhotoDetailsViewModel?
+    
+    let feedDownloader: FeedDownloader
+    
+    init(downloader: FeedDownloader = FeedDownloader()) {
+        
+        feedDownloader = downloader
+    }
     
     private func downloadNextPage(isFirstStart: Bool = false) {
         
-        FeedDownloader.download { (size) in
+        feedDownloader.download { (size) in
             
             if isFirstStart {
                 
@@ -50,12 +58,12 @@ class PhotoGridViewModel {
     
     func addMorePhotos(currentCount: Int) {
         
-        guard currentCount <  FeedDownloader.photos.count else {
+        guard currentCount <  feedDownloader.photos.count else {
             
             return
         }
         var indexPaths:[IndexPath] = []
-        for index in currentCount..<FeedDownloader.photos.count {
+        for index in currentCount..<feedDownloader.photos.count {
 
                 indexPaths.append(IndexPath(item: index, section: 0))
         }
@@ -70,17 +78,17 @@ class PhotoGridViewModel {
     
     func numberOfPhotos() -> Int {
         
-        return FeedDownloader.photos.count
+        return feedDownloader.photos.count
     }
     
     func phtoAt(index: Int) -> Photo? {
         
-        if FeedDownloader.photos.count - index < downloadMorelimit {
+        if feedDownloader.photos.count - index < downloadMorelimit {
             
             downloadNextPage()
         }
         
-        return FeedDownloader.photos[index]
+        return feedDownloader.photos[index]
     }
     
     func photoIndexToScrollTo() -> Int {
@@ -92,7 +100,7 @@ class PhotoGridViewModel {
         
         if photoDetailsViewModel == nil {
             
-             photoDetailsViewModel = PhotoDetailsViewModel()
+             photoDetailsViewModel = PhotoDetailsViewModel(downloader: feedDownloader)
         }
         photoDetailsViewModel?.photoIndex = atIndex
 
