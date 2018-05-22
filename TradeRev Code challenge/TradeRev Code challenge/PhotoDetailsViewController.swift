@@ -21,9 +21,9 @@ class PhotoDetailsViewController: UIViewController {
         
         if let  photo = viewModel?.photoAt(index: viewModel?.photoIndex ?? 0) {
             
-            photo.downloadThumbnail(completion: { (image) in
+            photo.downloadThumbnail(completion: {[weak self] (image) in
             
-                self.backgroundImageView.image = image
+                self?.backgroundImageView.image = image
             })
         }
         

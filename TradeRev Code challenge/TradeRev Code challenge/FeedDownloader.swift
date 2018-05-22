@@ -14,6 +14,7 @@ class FeedDownloader {
     
     var photos: [Photo] = []
     private var page    = 0
+    private var didDownloadSet = Set<Int>()
     
     func url(for page: Int) -> String {
         
@@ -22,7 +23,16 @@ class FeedDownloader {
     
     func download(completion: ((Int) -> Void)?) {
         
+        
+        guard page == 0 || didDownloadSet.contains(page) else {
+            
+            completion?(0)
+            return
+        }
         page = page + 1
+        
+        let temp_page = self.page
+
         DispatchQueue.global(qos: .background).async {
          
             Alamofire.request(self.url(for: self.page)).responseString { (response) in
@@ -32,6 +42,8 @@ class FeedDownloader {
                     
                     if let  array = Mapper<Photo>().mapArray(JSONString: results) {
                         
+                        print("\(temp_page)")
+                        self.didDownloadSet.insert(temp_page)
                         size = array.count
                         self.photos.append(contentsOf: array)
                     }
