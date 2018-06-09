@@ -6,7 +6,6 @@ target 'TradeRev Code challenge' do
   use_frameworks!
   
   pod 'AlamofireImage'
-  pod 'ObjectMapper'
 
 
   # Pods for TradeRev Code challenge
@@ -15,7 +14,6 @@ target 'TradeRev Code challenge' do
     inherit! :search_paths
     
     pod 'AlamofireImage'
-    pod 'ObjectMapper'
 
     # Pods for testing
   end

@@ -8,7 +8,6 @@
 
 import Foundation
 import Alamofire
-import ObjectMapper
 
 class FeedDownloader {
     
@@ -38,15 +37,11 @@ class FeedDownloader {
             Alamofire.request(self.url(for: self.page)).responseString { (response) in
                 
                 var size = 0
-                if let results = response.result.value {
+                if let results = response.result.value, let p = ModelDecoder.decodeSearchResults(forString: results) {
                     
-                    if let  array = Mapper<Photo>().mapArray(JSONString: results) {
-                        
-                        print("\(temp_page)")
-                        self.didDownloadSet.insert(temp_page)
-                        size = array.count
-                        self.photos.append(contentsOf: array)
-                    }
+                    size = p.count
+                     self.didDownloadSet.insert(temp_page)
+                     self.photos.append(contentsOf: p)
                 }
                 DispatchQueue.main.async {
                     

@@ -17,6 +17,7 @@ class PhotoPageViewController: UIViewController {
     override func viewDidLoad() {
         super.viewDidLoad()
         
+        imageView.contentMode                               = .scaleAspectFit
         imageView.translatesAutoresizingMaskIntoConstraints = false
         view.addSubview(imageView)
         let views = ["image": imageView]

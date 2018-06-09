@@ -7,13 +7,9 @@
 //
 
 import Foundation
-import ObjectMapper
 
-
-struct Photo: Mappable {
-    
-    typealias imageDownloadCompleted = (UIImage) -> Void
-   
+struct Photo: Codable {
+       
     var id: String?
     var description: String?
     var likes: Int = 0
@@ -22,16 +18,6 @@ struct Photo: Mappable {
     var urls: Urls?
     var user: User?
     
-    init?(map: Map) {}
 
-    mutating func mapping(map: Map) {
-        
-        id <- map["id"]
-        description <- map["description"]
-        likes <- map["likes"]
-        width <- map["width"]
-        height <- map["height"]
-        urls <- map["urls"]
-        user <- map["user"]
-    }
+    
 }

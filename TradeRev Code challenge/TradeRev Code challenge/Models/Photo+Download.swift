@@ -9,9 +9,10 @@
 import Foundation
 import AlamofireImage
 import Alamofire
-import ObjectMapper
 
 fileprivate let imageCache = NSCache<NSString, UIImage>()
+
+typealias imageDownloadCompleted = (UIImage) -> Void
 
 
 extension Photo {

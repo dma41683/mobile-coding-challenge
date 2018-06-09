@@ -32,6 +32,8 @@
 		827D9584209E1E9000BD678D /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 827D9582209E1E9000BD678D /* LaunchScreen.storyboard */; };
 		827D958F209E1E9000BD678D /* TradeRev_Code_challengeTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 827D958E209E1E9000BD678D /* TradeRev_Code_challengeTests.swift */; };
 		827D959A209E1E9100BD678D /* TradeRev_Code_challengeUITests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 827D9599209E1E9100BD678D /* TradeRev_Code_challengeUITests.swift */; };
+		8296848320CC7E380012758B /* ModelDecoder.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8296848220CC7E380012758B /* ModelDecoder.swift */; };
+		8296848420CC7E460012758B /* ModelDecoder.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8296848220CC7E380012758B /* ModelDecoder.swift */; };
 		82BC5E8A20CC2EF900B5AB23 /* PhotoPageViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 82BC5E8920CC2EF900B5AB23 /* PhotoPageViewController.swift */; };
 		938E9CEC004AE62033C8CA76 /* Pods_TradeRev_Code_challengeUITests.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 0BACECB00C7FA8F0946C7DD8 /* Pods_TradeRev_Code_challengeUITests.framework */; };
 		A6F698C74092EFC92ADB29CE /* Pods_TradeRev_Code_challenge.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 821279E0209FDC2300DB495C /* Pods_TradeRev_Code_challenge.framework */; };
@@ -88,6 +90,7 @@
 		827D9595209E1E9000BD678D /* TradeRev Code challengeUITests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = "TradeRev Code challengeUITests.xctest"; sourceTree = BUILT_PRODUCTS_DIR; };
 		827D9599209E1E9100BD678D /* TradeRev_Code_challengeUITests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TradeRev_Code_challengeUITests.swift; sourceTree = "<group>"; };
 		827D959B209E1E9100BD678D /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
+		8296848220CC7E380012758B /* ModelDecoder.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = ModelDecoder.swift; sourceTree = "<group>"; };
 		82BC5E8920CC2EF900B5AB23 /* PhotoPageViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PhotoPageViewController.swift; sourceTree = "<group>"; };
 		CD0A39B6CC3AB7439A30EC54 /* Pods-TradeRev Code challenge.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-TradeRev Code challenge.release.xcconfig"; path = "Pods/Target Support Files/Pods-TradeRev Code challenge/Pods-TradeRev Code challenge.release.xcconfig"; sourceTree = "<group>"; };
 		E1745A26C965E415602EE38A /* Pods_TradeRev_Code_challenge.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_TradeRev_Code_challenge.framework; sourceTree = BUILT_PRODUCTS_DIR; };
@@ -148,6 +151,7 @@
 		823F5E0D209E3F61003FA13F /* Models */ = {
 			isa = PBXGroup;
 			children = (
+				8296848220CC7E380012758B /* ModelDecoder.swift */,
 				823F5E0E209E3F76003FA13F /* Photo.swift */,
 				823F5E10209E4156003FA13F /* Urls.swift */,
 				823F5E12209E42E2003FA13F /* User.swift */,
@@ -311,9 +315,11 @@
 				TargetAttributes = {
 					827D9575209E1E8F00BD678D = {
 						CreatedOnToolsVersion = 9.3;
+						LastSwiftMigration = 0940;
 					};
 					827D9589209E1E9000BD678D = {
 						CreatedOnToolsVersion = 9.3;
+						LastSwiftMigration = 0940;
 					};
 					827D9594209E1E9000BD678D = {
 						CreatedOnToolsVersion = 9.3;
@@ -378,13 +384,11 @@
 				"${SRCROOT}/Pods/Target Support Files/Pods-TradeRev Code challenge/Pods-TradeRev Code challenge-frameworks.sh",
 				"${BUILT_PRODUCTS_DIR}/Alamofire/Alamofire.framework",
 				"${BUILT_PRODUCTS_DIR}/AlamofireImage/AlamofireImage.framework",
-				"${BUILT_PRODUCTS_DIR}/ObjectMapper/ObjectMapper.framework",
 			);
 			name = "[CP] Embed Pods Frameworks";
 			outputPaths = (
 				"${TARGET_BUILD_DIR}/${FRAMEWORKS_FOLDER_PATH}/Alamofire.framework",
 				"${TARGET_BUILD_DIR}/${FRAMEWORKS_FOLDER_PATH}/AlamofireImage.framework",
-				"${TARGET_BUILD_DIR}/${FRAMEWORKS_FOLDER_PATH}/ObjectMapper.framework",
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 			shellPath = /bin/sh;
@@ -436,13 +440,11 @@
 				"${SRCROOT}/Pods/Target Support Files/Pods-TradeRev Code challengeTests/Pods-TradeRev Code challengeTests-frameworks.sh",
 				"${BUILT_PRODUCTS_DIR}/Alamofire/Alamofire.framework",
 				"${BUILT_PRODUCTS_DIR}/AlamofireImage/AlamofireImage.framework",
-				"${BUILT_PRODUCTS_DIR}/ObjectMapper/ObjectMapper.framework",
 			);
 			name = "[CP] Embed Pods Frameworks";
 			outputPaths = (
 				"${TARGET_BUILD_DIR}/${FRAMEWORKS_FOLDER_PATH}/Alamofire.framework",
 				"${TARGET_BUILD_DIR}/${FRAMEWORKS_FOLDER_PATH}/AlamofireImage.framework",
-				"${TARGET_BUILD_DIR}/${FRAMEWORKS_FOLDER_PATH}/ObjectMapper.framework",
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 			shellPath = /bin/sh;
@@ -483,6 +485,7 @@
 				823F5E15209E4727003FA13F /* FeedDownloader.swift in Sources */,
 				823F5E1C209E7AC1003FA13F /* PhotoDetailsViewController.swift in Sources */,
 				827D957A209E1E8F00BD678D /* AppDelegate.swift in Sources */,
+				8296848320CC7E380012758B /* ModelDecoder.swift in Sources */,
 				823F5E0C209E2562003FA13F /* ThumbnailCollectionViewCell.swift in Sources */,
 				823F5E11209E4156003FA13F /* Urls.swift in Sources */,
 				823F5E18209E5579003FA13F /* PhotoGridViewModel.swift in Sources */,
@@ -500,6 +503,7 @@
 				821279DB209FD45300DB495C /* MockFeedDownloader.swift in Sources */,
 				821279D6209FD42700DB495C /* Urls.swift in Sources */,
 				821279D5209FD42200DB495C /* Photo.swift in Sources */,
+				8296848420CC7E460012758B /* ModelDecoder.swift in Sources */,
 				827D958F209E1E9000BD678D /* TradeRev_Code_challengeTests.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
@@ -676,7 +680,8 @@
 				);
 				PRODUCT_BUNDLE_IDENTIFIER = "com.dma.tradrev.TradeRev-Code-challenge";
 				PRODUCT_NAME = "$(TARGET_NAME)";
-				SWIFT_VERSION = 3.0;
+				SWIFT_SWIFT3_OBJC_INFERENCE = On;
+				SWIFT_VERSION = 4.0;
 				TARGETED_DEVICE_FAMILY = "1,2";
 			};
 			name = Debug;
@@ -694,7 +699,8 @@
 				);
 				PRODUCT_BUNDLE_IDENTIFIER = "com.dma.tradrev.TradeRev-Code-challenge";
 				PRODUCT_NAME = "$(TARGET_NAME)";
-				SWIFT_VERSION = 3.0;
+				SWIFT_SWIFT3_OBJC_INFERENCE = On;
+				SWIFT_VERSION = 4.0;
 				TARGETED_DEVICE_FAMILY = "1,2";
 			};
 			name = Release;
@@ -713,7 +719,8 @@
 				);
 				PRODUCT_BUNDLE_IDENTIFIER = "com.dma.tradrev.TradeRev-Code-challengeTests";
 				PRODUCT_NAME = "$(TARGET_NAME)";
-				SWIFT_VERSION = 3.0;
+				SWIFT_SWIFT3_OBJC_INFERENCE = On;
+				SWIFT_VERSION = 4.0;
 				TARGETED_DEVICE_FAMILY = "1,2";
 			};
 			name = Debug;
@@ -732,7 +739,8 @@
 				);
 				PRODUCT_BUNDLE_IDENTIFIER = "com.dma.tradrev.TradeRev-Code-challengeTests";
 				PRODUCT_NAME = "$(TARGET_NAME)";
-				SWIFT_VERSION = 3.0;
+				SWIFT_SWIFT3_OBJC_INFERENCE = On;
+				SWIFT_VERSION = 4.0;
 				TARGETED_DEVICE_FAMILY = "1,2";
 			};
 			name = Release;

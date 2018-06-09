@@ -67,7 +67,6 @@ extension PhotoDetailsViewController: UIPageViewControllerDelegate {
     }
 }
 
-
 // MARK: UIPageViewControllerDataSource
 extension PhotoDetailsViewController: UIPageViewControllerDataSource {
     

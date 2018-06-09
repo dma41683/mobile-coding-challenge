@@ -115,6 +115,10 @@ extension TradeRev_Code_challengeTests: PhotoGridView {
 }
 
 extension TradeRev_Code_challengeTests: PhotoDetailsView {
+    func addPhotos(amount: Int) {
+        
+    }
+    
     
     func setShowPhotoAt(index: Int) {
         
