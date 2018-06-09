@@ -24,7 +24,6 @@
 		823F5E13209E42E2003FA13F /* User.swift in Sources */ = {isa = PBXBuildFile; fileRef = 823F5E12209E42E2003FA13F /* User.swift */; };
 		823F5E15209E4727003FA13F /* FeedDownloader.swift in Sources */ = {isa = PBXBuildFile; fileRef = 823F5E14209E4727003FA13F /* FeedDownloader.swift */; };
 		823F5E18209E5579003FA13F /* PhotoGridViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 823F5E17209E5579003FA13F /* PhotoGridViewModel.swift */; };
-		823F5E1A209E7A17003FA13F /* PhotoDetailsCollectionViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 823F5E19209E7A17003FA13F /* PhotoDetailsCollectionViewCell.swift */; };
 		823F5E1C209E7AC1003FA13F /* PhotoDetailsViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 823F5E1B209E7AC1003FA13F /* PhotoDetailsViewController.swift */; };
 		827D957A209E1E8F00BD678D /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 827D9579209E1E8F00BD678D /* AppDelegate.swift */; };
 		827D957C209E1E8F00BD678D /* ViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 827D957B209E1E8F00BD678D /* ViewController.swift */; };
@@ -33,6 +32,7 @@
 		827D9584209E1E9000BD678D /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 827D9582209E1E9000BD678D /* LaunchScreen.storyboard */; };
 		827D958F209E1E9000BD678D /* TradeRev_Code_challengeTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 827D958E209E1E9000BD678D /* TradeRev_Code_challengeTests.swift */; };
 		827D959A209E1E9100BD678D /* TradeRev_Code_challengeUITests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 827D9599209E1E9100BD678D /* TradeRev_Code_challengeUITests.swift */; };
+		82BC5E8A20CC2EF900B5AB23 /* PhotoPageViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 82BC5E8920CC2EF900B5AB23 /* PhotoPageViewController.swift */; };
 		938E9CEC004AE62033C8CA76 /* Pods_TradeRev_Code_challengeUITests.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 0BACECB00C7FA8F0946C7DD8 /* Pods_TradeRev_Code_challengeUITests.framework */; };
 		A6F698C74092EFC92ADB29CE /* Pods_TradeRev_Code_challenge.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 821279E0209FDC2300DB495C /* Pods_TradeRev_Code_challenge.framework */; };
 		AC0881B931F35B99131B71CC /* Pods_TradeRev_Code_challenge.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = E1745A26C965E415602EE38A /* Pods_TradeRev_Code_challenge.framework */; };
@@ -74,7 +74,6 @@
 		823F5E12209E42E2003FA13F /* User.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = User.swift; sourceTree = "<group>"; };
 		823F5E14209E4727003FA13F /* FeedDownloader.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = FeedDownloader.swift; sourceTree = "<group>"; };
 		823F5E17209E5579003FA13F /* PhotoGridViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PhotoGridViewModel.swift; sourceTree = "<group>"; };
-		823F5E19209E7A17003FA13F /* PhotoDetailsCollectionViewCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PhotoDetailsCollectionViewCell.swift; sourceTree = "<group>"; };
 		823F5E1B209E7AC1003FA13F /* PhotoDetailsViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PhotoDetailsViewController.swift; sourceTree = "<group>"; };
 		827D9576209E1E8F00BD678D /* TradeRev Code challenge.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = "TradeRev Code challenge.app"; sourceTree = BUILT_PRODUCTS_DIR; };
 		827D9579209E1E8F00BD678D /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
@@ -89,6 +88,7 @@
 		827D9595209E1E9000BD678D /* TradeRev Code challengeUITests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = "TradeRev Code challengeUITests.xctest"; sourceTree = BUILT_PRODUCTS_DIR; };
 		827D9599209E1E9100BD678D /* TradeRev_Code_challengeUITests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TradeRev_Code_challengeUITests.swift; sourceTree = "<group>"; };
 		827D959B209E1E9100BD678D /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
+		82BC5E8920CC2EF900B5AB23 /* PhotoPageViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PhotoPageViewController.swift; sourceTree = "<group>"; };
 		CD0A39B6CC3AB7439A30EC54 /* Pods-TradeRev Code challenge.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-TradeRev Code challenge.release.xcconfig"; path = "Pods/Target Support Files/Pods-TradeRev Code challenge/Pods-TradeRev Code challenge.release.xcconfig"; sourceTree = "<group>"; };
 		E1745A26C965E415602EE38A /* Pods_TradeRev_Code_challenge.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_TradeRev_Code_challenge.framework; sourceTree = BUILT_PRODUCTS_DIR; };
 		F3C20579EB44207D628A2834 /* Pods-TradeRev Code challengeTests.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-TradeRev Code challengeTests.debug.xcconfig"; path = "Pods/Target Support Files/Pods-TradeRev Code challengeTests/Pods-TradeRev Code challengeTests.debug.xcconfig"; sourceTree = "<group>"; };
@@ -141,7 +141,6 @@
 			isa = PBXGroup;
 			children = (
 				823F5E0B209E2562003FA13F /* ThumbnailCollectionViewCell.swift */,
-				823F5E19209E7A17003FA13F /* PhotoDetailsCollectionViewCell.swift */,
 			);
 			path = Cells;
 			sourceTree = "<group>";
@@ -202,6 +201,7 @@
 				827D9582209E1E9000BD678D /* LaunchScreen.storyboard */,
 				827D9585209E1E9000BD678D /* Info.plist */,
 				823F5E14209E4727003FA13F /* FeedDownloader.swift */,
+				82BC5E8920CC2EF900B5AB23 /* PhotoPageViewController.swift */,
 			);
 			path = "TradeRev Code challenge";
 			sourceTree = "<group>";
@@ -475,6 +475,7 @@
 			buildActionMask = 2147483647;
 			files = (
 				821279D4209FC42000DB495C /* Photo+Download.swift in Sources */,
+				82BC5E8A20CC2EF900B5AB23 /* PhotoPageViewController.swift in Sources */,
 				823F5E0F209E3F76003FA13F /* Photo.swift in Sources */,
 				827D957C209E1E8F00BD678D /* ViewController.swift in Sources */,
 				823F5E13209E42E2003FA13F /* User.swift in Sources */,
@@ -485,7 +486,6 @@
 				823F5E0C209E2562003FA13F /* ThumbnailCollectionViewCell.swift in Sources */,
 				823F5E11209E4156003FA13F /* Urls.swift in Sources */,
 				823F5E18209E5579003FA13F /* PhotoGridViewModel.swift in Sources */,
-				823F5E1A209E7A17003FA13F /* PhotoDetailsCollectionViewCell.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};

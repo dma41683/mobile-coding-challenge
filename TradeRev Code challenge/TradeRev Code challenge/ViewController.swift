@@ -36,25 +36,20 @@ class ViewController: UIViewController {
         super.didReceiveMemoryWarning()
         // Dispose of any resources that can be recreated.
     }
-    
-    override func prepare(for segue: UIStoryboardSegue, sender: Any?) {
-        
-        guard let detialsViewController = segue.destination as? PhotoDetailsViewController else {
-            
-            return
-        }
-        guard let cell = sender as? UICollectionViewCell, let indexPath = collectionView.indexPath(for: cell) else {
-            
-            return
-        }
-        detialsViewController.viewModel = viewModel.photoDetailsViewModel(atIndex: indexPath.row)
-    }
 }
 
 //MARK: UICollectionViewDelegate
 
 extension ViewController: UICollectionViewDelegateFlowLayout {
     
+    
+    func collectionView(_ collectionView: UICollectionView, didSelectItemAt indexPath: IndexPath) {
+        
+        let vc = PhotoDetailsViewController(transitionStyle: .pageCurl, navigationOrientation: .horizontal, options: [:])
+          vc.viewModel = viewModel.photoDetailsViewModel(atIndex: indexPath.row)
+        navigationController?.pushViewController(vc, animated: true)
+    }
+
     func collectionView(_ collectionView: UICollectionView,
                                  layout collectionViewLayout: UICollectionViewLayout,
                                  sizeForItemAt indexPath: IndexPath) -> CGSize {

@@ -10,8 +10,7 @@ import UIKit
 
 protocol PhotoDetailsView: class {
     
-    func addPhotos(inPaths: [IndexPath])
-    func setShowPhotoAt(index: Int)
+    func addPhotos(amount: Int)
 }
 
 class PhotoDetailsViewModel: PhotoGridViewModel {
@@ -20,11 +19,7 @@ class PhotoDetailsViewModel: PhotoGridViewModel {
     var photoIndex = 0
     
    override func viewDidLoad() {}
-    
-    override func viewDidAppear() {
-        
-        photoDetailsView?.setShowPhotoAt(index: photoIndex)
-    }
+    override func viewDidAppear() {}
     
     func titleForPhtoAt(index: Int) -> String? {
         
@@ -33,11 +28,6 @@ class PhotoDetailsViewModel: PhotoGridViewModel {
     
     override func update(indexPaths: [IndexPath]) {
         
-        guard let phtoDetailsView = photoDetailsView else {
-                
-                return
-            }
-        phtoDetailsView.addPhotos(inPaths: indexPaths)
-        
+        photoDetailsView?.addPhotos(amount: indexPaths.count)
     }
 }

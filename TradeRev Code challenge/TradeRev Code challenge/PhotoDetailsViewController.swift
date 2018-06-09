@@ -8,28 +8,24 @@
 
 import UIKit
 
-class PhotoDetailsViewController: UIViewController {
-
-    @IBOutlet weak var collectionView: UICollectionView!
-    @IBOutlet weak var backgroundImageView: UIImageView!
+class PhotoDetailsViewController: UIPageViewController {
     
     var viewModel: PhotoDetailsViewModel?
+    fileprivate var cache = Set<PhotoPageViewController>()
     
     override func viewDidLoad() {
         
         super.viewDidLoad()
-        
-        if let  photo = viewModel?.photoAt(index: viewModel?.photoIndex ?? 0) {
-            
-            photo.downloadThumbnail(completion: {[weak self] (image) in
-            
-                self?.backgroundImageView.image = image
-            })
-        }
-        
+        view.backgroundColor        = .white
+        dataSource                  = self
         viewModel?.photoDetailsView = self
         viewModel?.viewDidLoad()
-        collectionView.isHidden = true
+        
+        let firstPage   = page()
+        let currentPage = viewModel?.photoIndex ?? 0
+        firstPage.page  = currentPage
+        firstPage.setImage(photo: viewModel?.photoAt(index: currentPage))
+        setViewControllers([firstPage], direction: .forward, animated: true, completion: nil)
         
     }
     
@@ -42,97 +38,70 @@ class PhotoDetailsViewController: UIViewController {
     override func viewWillDisappear(_ animated: Bool) {
         
         super.viewWillDisappear(animated)
-        
-        //set the last seen photo
-        backgroundImageView.image = nil
-        viewModel?.photoIndex     = collectionView.indexPathsForVisibleItems[0].row
     }
-
-    override func didReceiveMemoryWarning() {
-        super.didReceiveMemoryWarning()
-        // Dispose of any resources that can be recreated.
+    
+    
+    fileprivate func page() -> PhotoPageViewController {
+        
+        guard let vc = cache.filter({ (pvc) -> Bool in return pvc.parent == nil}).first else {
+            
+            let page = PhotoPageViewController()
+            cache.insert(page)
+            
+            return page
+        }
+        vc.prepareForReuse()
+        return vc
     }
 }
 
-//MARK: UICollectionViewDelegate
-
-extension PhotoDetailsViewController: UICollectionViewDelegateFlowLayout {
+// MARK: UIPageViewControllerDelegate
+extension PhotoDetailsViewController: UIPageViewControllerDelegate {
     
-    func collectionView(_ collectionView: UICollectionView,
-                        layout collectionViewLayout: UICollectionViewLayout,
-                        sizeForItemAt indexPath: IndexPath) -> CGSize {
+    func pageViewController(_ pageViewController: UIPageViewController, didFinishAnimating finished: Bool, previousViewControllers: [UIViewController], transitionCompleted completed: Bool) {
         
-        return CGSize(width: collectionView.frame.size.width, height: collectionView.frame.size.height)
-    }
-    
-    func collectionView(_ collectionView: UICollectionView,
-                        layout collectionViewLayout: UICollectionViewLayout,
-                        insetForSectionAt section: Int) -> UIEdgeInsets {
-        
-        return UIEdgeInsets(top: 0.0, left: 0.0, bottom: 0.0, right: 0.0)
-    }
-    
-    
-    func collectionView(_ collectionView: UICollectionView,
-                        layout collectionViewLayout: UICollectionViewLayout,
-                        minimumInteritemSpacingForSectionAt section: Int) -> CGFloat {
-        
-        return 0.0
-    }
-    
-    func collectionView(_ collectionView: UICollectionView,
-                        layout collectionViewLayout: UICollectionViewLayout,
-                        minimumLineSpacingForSectionAt section: Int) -> CGFloat {
-        
-        return 0.0
+        if let vc = previousViewControllers.first as? PhotoPageViewController, completed {
+            
+            viewModel?.photoIndex = vc.page + 1
+        }
     }
 }
 
 
-// MARK: UICollectionViewDataSorce
+// MARK: UIPageViewControllerDataSource
+extension PhotoDetailsViewController: UIPageViewControllerDataSource {
+    
 
-extension PhotoDetailsViewController: UICollectionViewDataSource {
-    func collectionView(_ collectionView: UICollectionView, numberOfItemsInSection section: Int) -> Int {
+    func pageViewController(_ pageViewController: UIPageViewController, viewControllerBefore viewController: UIViewController) -> UIViewController? {
         
+        guard let vc = viewController as? PhotoPageViewController, vc.page > 0 else {
+            
+            return nil
+        }
+        let prevPage    = page()
+        prevPage.page   = vc.page - 1
+        prevPage.setImage(photo: viewModel?.photoAt(index: prevPage.page))
         
-        return  viewModel?.numberOfPhotos() ?? 0
+        return prevPage
     }
     
-    func collectionView(_ collectionView: UICollectionView, cellForItemAt indexPath: IndexPath) -> UICollectionViewCell {
+    func pageViewController(_ pageViewController: UIPageViewController, viewControllerAfter viewController: UIViewController) -> UIViewController? {
         
-        let cell = collectionView.dequeueReusableCell(withReuseIdentifier: "detailsCell", for: indexPath) as! PhotoDetailsCollectionViewCell
+        guard let vc = viewController as? PhotoPageViewController else {
+            
+            return nil
+        }
+        let nextPage  = page()
+        nextPage.page = vc.page + 1
+        nextPage.setImage(photo: viewModel?.photoAt(index: nextPage.page))
         
-        title = viewModel?.titleForPhtoAt(index: indexPath.row) ?? ""
-        cell.setImage(photo: viewModel?.photoAt(index: indexPath.row))
-        viewModel?.addMorePhotos(currentCount: collectionView.numberOfItems(inSection: 0))
-        
-        
-        return cell
+        return nextPage
     }
 }
 
 // MARK: PhotoDetailsView
-
 extension PhotoDetailsViewController: PhotoDetailsView {
     
-    func addPhotos(inPaths: [IndexPath]) {
-        
-        collectionView.performBatchUpdates({
-            
-            collectionView.insertItems(at: inPaths)
-            
-        }, completion: nil)
-    }
-    
-    func setShowPhotoAt(index: Int) {
-        
-        collectionView.scrollToItem(at: IndexPath(item: index, section: 0), at: .right, animated: false)
-        
-        UIView.transition(with: collectionView, duration: 0.1, options: .curveEaseIn, animations: {
-            
-            self.collectionView.isHidden = false
-            
-        }, completion: nil)
-    }
+    func addPhotos(amount: Int) {}
 }
 
