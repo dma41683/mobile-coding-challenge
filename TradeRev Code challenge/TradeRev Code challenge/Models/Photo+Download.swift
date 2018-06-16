@@ -17,40 +17,45 @@ typealias imageDownloadCompleted = (UIImage) -> Void
 
 extension Photo {
     
-    func downloadFullSizeImage(completion: @escaping imageDownloadCompleted ) {
+    func downloadFullSizeImage(completion: @escaping imageDownloadCompleted ) -> DataRequest? {
         
         if let url = urls?.thumb, let image = imageCache.object(forKey: url as NSString) {
             
             completion(image)
+            return nil
         }
         
         
         guard let url = urls?.full else {
             
-            return
+            return nil
         }
-        downloadImage(url: url, completion: completion)
+        return downloadImage(url: url, completion: completion)
     }
     
-    func downloadThumbnail(completion: @escaping imageDownloadCompleted) {
+    func downloadThumbnail(completion: @escaping imageDownloadCompleted) -> DataRequest? {
         
         guard let url = urls?.thumb else {
             
-            return
+            return nil
         }
-        downloadImage(url: url, completion: completion)
+       return downloadImage(url: url, completion: completion)
     }
     
-    private func downloadImage(url: String, completion: @escaping imageDownloadCompleted) {
+    private func downloadImage(url: String,
+                               completion: @escaping imageDownloadCompleted) -> DataRequest? {
         
         if let cachedImage = imageCache.object(forKey: url as NSString) {
             completion(cachedImage)
-            return
+           
+            return nil
         }
+        
+       let request = Alamofire.SessionManager.default.request(url)
         
         DispatchQueue.global(qos: .background).async {
             
-            Alamofire.request(url).responseImage { (response) in
+           request.responseImage { (response) in
                 
                 guard let image = response.result.value else {
                     
@@ -63,6 +68,6 @@ extension Photo {
                 }
             }
         }
-        
+        return request
     }
 }

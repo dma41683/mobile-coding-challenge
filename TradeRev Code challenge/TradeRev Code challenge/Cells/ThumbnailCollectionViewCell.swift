@@ -14,14 +14,17 @@ class ThumbnailCollectionViewCell: UICollectionViewCell {
     
     @IBOutlet weak var imageView: UIImageView!
     
+    private var request: DataRequest?
+    
     override func prepareForReuse() {
         
+        request?.cancel()
         imageView.image = UIImage(named: "placeholder")
     }
     
     func setImage(photo: Photo?) {
         
-        photo?.downloadThumbnail(completion: { (image) in
+        request = photo?.downloadThumbnail(completion: { (image) in
             
             self.imageView.image = image
         })

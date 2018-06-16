@@ -7,12 +7,14 @@
 //
 
 import UIKit
+import Alamofire
 
 class PhotoPageViewController: UIViewController {
 
     
     var page = -1
     fileprivate let imageView = UIImageView()
+    private var request: DataRequest?
     
     override func viewDidLoad() {
         super.viewDidLoad()
@@ -33,12 +35,13 @@ extension PhotoPageViewController {
     
     func prepareForReuse() {
         
+        request?.cancel()
         imageView.image = UIImage(named: "placeholder")
     }
     
     func setImage(photo: Photo?) {
         
-        photo?.downloadFullSizeImage(completion: { (image) in
+       request = photo?.downloadFullSizeImage(completion: { (image) in
             
             UIView.transition(with: self.imageView,
                               duration:1,

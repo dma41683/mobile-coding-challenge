@@ -17,7 +17,4 @@ struct Photo: Codable {
     var height: Int?
     var urls: Urls?
     var user: User?
-    
-
-    
 }
